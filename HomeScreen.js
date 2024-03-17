@@ -16,6 +16,11 @@ export default function HomeScreen({ navigation }) {
         title="Chatbot"
         onPress={() => navigation.navigate('ChatbotNavigation')}
       />
+      <Button
+        title="BiteSizeLearning"
+        onPress={() => navigation.navigate('BiteSizeNavigation')}
+      />
+
     </View>
   );
 }
