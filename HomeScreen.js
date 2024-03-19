@@ -24,7 +24,10 @@ export default function HomeScreen({ navigation }) {
         title="Community"
         onPress={() => navigation.navigate('Route')}
       />
-
+      <Button
+        title="Risk Tolerance Assessment"
+        onPress={() => navigation.navigate('QuizNavigator')}
+      />
     </View>
   );
 }
