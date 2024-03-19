@@ -10,9 +10,10 @@ import GlobalAPI from '../Services/GlobalAPI';
 
 function NewsHome() {
   const [newsList, setNewsList] = useState([]);
+  
   useEffect(() => {
-    // getTopHeadlines();
-    getNewsByCategory('latest');
+    getTopHeadlines();
+    // getNewsByCategory('latest');
 
   }, [])
 

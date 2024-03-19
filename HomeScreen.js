@@ -20,6 +20,10 @@ export default function HomeScreen({ navigation }) {
         title="BiteSizeLearning"
         onPress={() => navigation.navigate('BiteSizeNavigation')}
       />
+      <Button
+        title="Risk Tolerance Assessment"
+        onPress={() => navigation.navigate('QuizNavigator')}
+      />
 
     </View>
   );
