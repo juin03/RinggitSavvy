@@ -8,6 +8,7 @@ import OnboardingNavigation from './src/components/Onboarding-JS/Navigation/Onbo
 import NewsHomeNavigator from './src/components/NewsHome-JS/Navigations/NewsHomeNavigator';
 import ChatbotNavigation from './src/components/ChatBot-JS/Navigations/ChatbotNavigation';
 import BiteSizeNavigation from './src/components/bitesizedlearning-JS/Navigations/BiteSizeNavigation';
+import Route from './src/components/Community-JS/Routes';
 
 
 
@@ -31,6 +32,7 @@ export default function App() {
         <Stack.Screen name="NewsHomeNavigator" component={NewsHomeNavigator} options={{ headerShown: false }}/>
         <Stack.Screen name="ChatbotNavigation" component={ChatbotNavigation} options={{ headerShown: false }}/>
         <Stack.Screen name="BiteSizeNavigation" component={BiteSizeNavigation} options={{ headerShown: false }}/>
+        <Stack.Screen name="Route" component={Route} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
