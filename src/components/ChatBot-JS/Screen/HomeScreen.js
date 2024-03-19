@@ -128,6 +128,7 @@ function HomeScreen() {
           onChangeText={setText}
           value={text}
           placeholder="Type your message here..."
+          multiline
           editable={!sendingMessage} // Optionally make input non-editable during sending
         />
         <TouchableOpacity onPress={sendMessage} style={styles.sendButton} disabled={sendingMessage}>
