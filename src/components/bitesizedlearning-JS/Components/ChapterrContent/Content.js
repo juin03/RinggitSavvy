@@ -41,9 +41,11 @@ export default function Content({ content }) {
                 fontFamily: "Inter-Medium",
                 fontSize: 20,
                 marginTop: 0,
+                alignContent : 'center',
               }}
             >
               {item.heading}
+              </Text>
               <ContentItem description={item?.description?.html} />
               <TouchableOpacity
                 style={{ marginTop: 10 }}
@@ -65,7 +67,6 @@ export default function Content({ content }) {
                   {content?.length > index + 1 ? "Next" : "Finish"}
                 </Text>
               </TouchableOpacity>
-            </Text>
           </View>
         )}
       />

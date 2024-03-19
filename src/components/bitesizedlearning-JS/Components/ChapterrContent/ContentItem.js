@@ -3,6 +3,7 @@ import React from "react";
 import RenderHtml from "react-native-render-html";
 import Colors from "../../Utils/Colors";
 
+
 export default function ContentItem({ description }) {
   const { width } = useWindowDimensions();
   const descriptionSource = {
@@ -15,6 +16,7 @@ export default function ContentItem({ description }) {
           contentWidth={width}
           source={descriptionSource}
           tagsStyles={tagsStyles}
+          baseFontStyle={{ fontFamily: "Inter-Regular", fontSize: 14, overflow: 'hidden' }}
         />
       </View>
     )
@@ -26,4 +28,5 @@ const tagsStyles = {
     fontFamily: "Inter-Regular",
     fontSize: 14,
   },
+
 };
