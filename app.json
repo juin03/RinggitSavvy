@@ -2,6 +2,7 @@
   "expo": {
     "name": "HelloWorld",
     "slug": "HelloWorld",
+    "scheme": "com.yoursite.helloworld",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

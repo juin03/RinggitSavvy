@@ -10,6 +10,10 @@ import ChatbotNavigation from './src/components/ChatBot-JS/Navigations/ChatbotNa
 import BiteSizeNavigation from './src/components/bitesizedlearning-JS/Navigations/BiteSizeNavigation';
 import Route from './src/components/Community-JS/Routes';
 import QuizNavigator from './src/components/Quiz-JS/Navigations/QuizNavigator';
+import { Clerk, ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
+import SignInWithOAuth from './SignInWithOAuth';
+import SignUpScreen from './SignUpScreen';
+import MentorshipHomeScreen from './src/components/Mentoring-JS/Screens/HomeScreen/MentorshipHomeScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -24,18 +28,48 @@ export default function App() {
     "Inter-SemiBold": require('./assets/fonts/Inter-SemiBold.ttf'),
   });
 
+  const tokenCache = {
+    async getToken(key) {
+      try {
+        return SecureStore.getItemAsync(key);
+      } catch (err) {
+        return null;
+      }
+    },
+    async saveToken(key, value) {
+      try {
+        return SecureStore.setItemAsync(key, value);
+      } catch (err) {
+        return;
+      }
+    },
+  };
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
-        <Stack.Screen name="OnboardingNavigation" component={OnboardingNavigation} options={{ headerShown: false }}/>
-        <Stack.Screen name="NewsHomeNavigator" component={NewsHomeNavigator} options={{ headerShown: false }}/>
-        <Stack.Screen name="ChatbotNavigation" component={ChatbotNavigation} options={{ headerShown: false }}/>
-        <Stack.Screen name="BiteSizeNavigation" component={BiteSizeNavigation} options={{ headerShown: false }}/>
-        <Stack.Screen name="QuizNavigator" component={QuizNavigator} options={{ headerShown: false }}/>
-        <Stack.Screen name="Route" component={Route} options={{ headerShown: false }}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <ClerkProvider 
+    // tokenCache={tokenCache}
+      publishableKey='pk_test_aGVscGVkLWRvcnktMjYuY2xlcmsuYWNjb3VudHMuZGV2JA'>
+      <SignedIn>
+        <MentorshipHomeScreen/>
+        {/* <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
+            <Stack.Screen name="OnboardingNavigation" component={OnboardingNavigation} options={{ headerShown: false }}/>
+            <Stack.Screen name="NewsHomeNavigator" component={NewsHomeNavigator} options={{ headerShown: false }}/>
+            <Stack.Screen name="ChatbotNavigation" component={ChatbotNavigation} options={{ headerShown: false }}/>
+            <Stack.Screen name="BiteSizeNavigation" component={BiteSizeNavigation} options={{ headerShown: false }}/>
+            <Stack.Screen name="QuizNavigator" component={QuizNavigator} options={{ headerShown: false }}/>
+            <Stack.Screen name="Route" component={Route} options={{ headerShown: false }}/>
+          </Stack.Navigator>
+        </NavigationContainer> */}
+      </SignedIn>
+
+      <SignedOut>
+        <SignInWithOAuth />
+      </SignedOut>
+      
+    </ClerkProvider>
+
   );
 }
 
