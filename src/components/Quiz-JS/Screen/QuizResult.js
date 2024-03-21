@@ -3,14 +3,23 @@ import { StyleSheet, Text, View } from 'react-native';
 import Button from '../Components/Button';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { ScrollView, GestureHandlerRootView } from 'react-native-gesture-handler';
+import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 const QuizResult = ({ route }) => {
   const userRiskClass = route?.params?.userRiskClass || 'Null';
+  const totalWeightage = route?.params?.totalWeightage || 0;
   const riskClassStyles = {
     Conservative: styles.conservativeType,
     Moderate: styles.moderateType,
     Aggressive: styles.aggressiveType,
   };
+
+  const riskClassColors = {
+    Conservative: '#C0FF71',
+    Moderate: '#FFF6A0',
+    Aggressive: '#FF8B8B',
+  };
+
 
   const riskClassDescriptions = {
     Conservative: 'Conservative Investors prioritize capital preservation. They opt for low-risk assets like bonds and certificates of deposit (CDs). Their comfort lies in accepting lower returns to safeguard their principal investment.',
@@ -23,15 +32,36 @@ const QuizResult = ({ route }) => {
 
 
   return (
-
     <GestureHandlerRootView  style= {styles.container_outer}>
       <View style={styles.titleContainer}>
         <Text style = {styles.titleText}> RinggitSavvy</Text>
       </View>
       <View style = {styles.resultContainer}>
-        <Text style = {{color:'#B1D0E0', fontSize: 16, marginBottom: 10}}> Your result:</Text>
-        <Text style = {riskClassStyles[userRiskClass] || styles.defaultType}>{userRiskClass}</Text>
-        <Text style = {{color:'#FFFFFF', fontSize: 22, marginTop: 10}}>Risk Tolerance</Text>
+        <View>
+          <Text style = {{color:'#B1D0E0', fontSize: 16, marginBottom: 10}}> Your result:</Text>
+          <Text style = {riskClassStyles[userRiskClass] || styles.defaultType}>{userRiskClass}</Text>
+          <Text style = {{color:'#FFFFFF', fontSize: 22, marginTop: 10, marginBottom: 10 }}>Risk Tolerance</Text>
+        </View>
+
+      <View style={{marginTop:10}}>
+        <AnimatedCircularProgress
+            size={110}
+            width={15}
+            rotation={0}
+            fill={(totalWeightage/63)*100}
+            tintColor={riskClassColors[userRiskClass] || '#FFFFFF'}
+            onAnimationComplete={() => console.log('onAnimationComplete')}
+            backgroundColor="#D9D9D9">
+            {
+              (fill) => (
+                <Text style={styles.titleText}>
+                  { Math.round(fill) }
+                </Text>
+              )
+            }
+        </AnimatedCircularProgress>
+      </View>
+
       </View>
       <View style={styles.container_inner}>
         <View style = {styles.descriptionContainer}>

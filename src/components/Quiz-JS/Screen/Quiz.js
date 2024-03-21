@@ -80,7 +80,7 @@ const Quiz = () => {
     const userRiskClass = calculateRiskClass(totalWeightage); 
 
     // Redirect user to the result page
-    navigation.navigate('QuizResult', { userRiskClass });
+    navigation.navigate('QuizResult', { userRiskClass, totalWeightage });
     }
   }
 
