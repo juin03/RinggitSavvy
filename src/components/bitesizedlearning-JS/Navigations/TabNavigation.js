@@ -5,7 +5,7 @@ import HomeScreen from "../Screen/HomeScreen";
 import MyCourse from "../Screen/MyCourse";
 import Profile from "../Screen/ProfileScreen";
 import { Ionicons } from "@expo/vector-icons";
-import HomeScreenNavigation from "./HomeScreenNavigation";
+import HomeScreenNavigation from "./BiteSizeNavigation";
 
 const Tab = createBottomTabNavigator();
 export default function TabNavigation() {

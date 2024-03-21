@@ -2,7 +2,7 @@ import React from "react";
 import * as WebBrowser from "expo-web-browser";
 import { Button, View } from "react-native";
 import { useOAuth } from "@clerk/clerk-expo";
-import { useWarmUpBrowser } from "./hooks/useWarmUpBrowser";
+import { useWarmUpBrowser } from "./src/components/Community-JS/hooks/useWarmUpBrowser";
  
 WebBrowser.maybeCompleteAuthSession();
  

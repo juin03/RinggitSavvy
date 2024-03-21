@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, FlatList, Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import GlobalApi from '../../Utils/GlobalApi'
-// import Heading from '../../Components/Heading';
+import Heading from '../../Components/Heading';
 
 export default function Slider() {
 
@@ -19,7 +19,7 @@ export default function Slider() {
     }
   return (
     <View>
-      <Text style={styles.heading}>Featured</Text>
+        <Heading text={'Offers For You'} />
       <FlatList
         data={slider}
         horizontal={true}

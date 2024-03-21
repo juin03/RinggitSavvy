@@ -10,10 +10,12 @@ import ChatbotNavigation from './src/components/ChatBot-JS/Navigations/ChatbotNa
 import BiteSizeNavigation from './src/components/bitesizedlearning-JS/Navigations/BiteSizeNavigation';
 import Route from './src/components/Community-JS/Routes';
 import QuizNavigator from './src/components/Quiz-JS/Navigations/QuizNavigator';
+import TabNavigation from './src/components/Mentoring-JS/Navigations/TabNavigation';
+import LearningNavigationHome from './src/components/Learning-JS/LearningNavigationHome';
 import { Clerk, ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
 import SignInWithOAuth from './SignInWithOAuth';
+import EditProfile from './src/components/Profile-JS/Profile-JS/EditProfile';
 import SignUpScreen from './SignUpScreen';
-import MentorshipHomeScreen from './src/components/Mentoring-JS/Screens/HomeScreen/MentorshipHomeScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -26,32 +28,15 @@ export default function App() {
     "Inter-Regular": require('./assets/fonts/Inter-Regular.ttf'),
     "Inter-Medium": require('./assets/fonts/Inter-Medium.ttf'),
     "Inter-SemiBold": require('./assets/fonts/Inter-SemiBold.ttf'),
+    "outfit": require('./assets/fonts/Outfit-Regular.ttf'),
+    "outfit-medium": require('./assets/fonts/Outfit-Medium.ttf'),
+    "outfit-bold": require('./assets/fonts/Outfit-Bold.ttf'),
   });
 
-  const tokenCache = {
-    async getToken(key) {
-      try {
-        return SecureStore.getItemAsync(key);
-      } catch (err) {
-        return null;
-      }
-    },
-    async saveToken(key, value) {
-      try {
-        return SecureStore.setItemAsync(key, value);
-      } catch (err) {
-        return;
-      }
-    },
-  };
-
   return (
-    <ClerkProvider 
-    // tokenCache={tokenCache}
-      publishableKey='pk_test_aGVscGVkLWRvcnktMjYuY2xlcmsuYWNjb3VudHMuZGV2JA'>
+    <ClerkProvider publishableKey='pk_test_aGVscGVkLWRvcnktMjYuY2xlcmsuYWNjb3VudHMuZGV2JA'>
       <SignedIn>
-        <MentorshipHomeScreen/>
-        {/* <NavigationContainer>
+        <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
             <Stack.Screen name="OnboardingNavigation" component={OnboardingNavigation} options={{ headerShown: false }}/>
@@ -60,8 +45,11 @@ export default function App() {
             <Stack.Screen name="BiteSizeNavigation" component={BiteSizeNavigation} options={{ headerShown: false }}/>
             <Stack.Screen name="QuizNavigator" component={QuizNavigator} options={{ headerShown: false }}/>
             <Stack.Screen name="Route" component={Route} options={{ headerShown: false }}/>
+            <Stack.Screen name="TabNavigation" component={TabNavigation} options={{ headerShown: false }}/>
+            <Stack.Screen name="LearningNavigationHome" component={LearningNavigationHome} options={{ headerShown: false }}/>
+            <Stack.Screen name="EditProfile" component={EditProfile} options={{ headerShown: false }}/>
           </Stack.Navigator>
-        </NavigationContainer> */}
+        </NavigationContainer>
       </SignedIn>
 
       <SignedOut>
