@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { StyleSheet} from 'react-native';
 import { useFonts } from 'expo-font';
-import HomeScreen from './HomeScreen';
+import BottomTab from './BottomTab';
 import OnboardingNavigation from './src/components/Onboarding-JS/Navigation/OnboardingNavigation';
 import NewsHomeNavigator from './src/components/NewsHome-JS/Navigations/NewsHomeNavigator';
 import ChatbotNavigation from './src/components/ChatBot-JS/Navigations/ChatbotNavigation';
@@ -15,7 +15,6 @@ import LearningNavigationHome from './src/components/Learning-JS/LearningNavigat
 import { Clerk, ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
 import SignInWithOAuth from './SignInWithOAuth';
 import EditProfile from './src/components/Profile-JS/Profile-JS/EditProfile';
-import SignUpScreen from './SignUpScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -38,8 +37,8 @@ export default function App() {
       <SignedIn>
         <NavigationContainer>
           <Stack.Navigator>
-            <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
-            <Stack.Screen name="OnboardingNavigation" component={OnboardingNavigation} options={{ headerShown: false }}/>
+            <Stack.Screen name="Home" component={BottomTab} options={{ headerShown: false }}/>
+            {/* <Stack.Screen name="OnboardingNavigation" component={OnboardingNavigation} options={{ headerShown: false }}/>
             <Stack.Screen name="NewsHomeNavigator" component={NewsHomeNavigator} options={{ headerShown: false }}/>
             <Stack.Screen name="ChatbotNavigation" component={ChatbotNavigation} options={{ headerShown: false }}/>
             <Stack.Screen name="BiteSizeNavigation" component={BiteSizeNavigation} options={{ headerShown: false }}/>
@@ -47,7 +46,7 @@ export default function App() {
             <Stack.Screen name="Route" component={Route} options={{ headerShown: false }}/>
             <Stack.Screen name="TabNavigation" component={TabNavigation} options={{ headerShown: false }}/>
             <Stack.Screen name="LearningNavigationHome" component={LearningNavigationHome} options={{ headerShown: false }}/>
-            <Stack.Screen name="EditProfile" component={EditProfile} options={{ headerShown: false }}/>
+            <Stack.Screen name="EditProfile" component={EditProfile} options={{ headerShown: false }}/> */}
           </Stack.Navigator>
         </NavigationContainer>
       </SignedIn>

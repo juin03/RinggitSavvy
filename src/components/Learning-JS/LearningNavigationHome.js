@@ -39,7 +39,7 @@ export default function LearningNavigationHome({ navigation }) {
         title="Mentorship"
         iconName="users"
         backgroundImageUri="https://media.istockphoto.com/id/1334472503/photo/indian-ceo-mentor-leader-talking-to-female-trainee-using-laptop-at-meeting.jpg?s=612x612&w=0&k=20&c=RypRc4QwkdD-ke1kY5dpBfiGpD2mQNFrXwNJj1W-wEo="
-        onPress={() => navigation.navigate("TabNavigation")}
+        onPress={() => navigation.navigate("MentorshipNavigation")}
       />
     </View>
   );
