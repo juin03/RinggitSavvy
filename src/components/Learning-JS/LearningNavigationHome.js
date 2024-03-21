@@ -88,7 +88,7 @@ export default function LearningNavigationHome({ navigation }) {
             elevation: 5,
           }}
           onPress={() => {
-            navigation.navigate("BiteSizeNavigation");
+            navigation.navigate("PodcastNavigation");
           }}
         >
           <View style={{ justifyContent: "space-between", flex: 1 }}>
