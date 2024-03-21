@@ -8,7 +8,6 @@ const Stack = createStackNavigator();
 function ChatbotNavigation() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} options={{ headerShown: false }}/>
       <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }}/>
     </Stack.Navigator>
   )

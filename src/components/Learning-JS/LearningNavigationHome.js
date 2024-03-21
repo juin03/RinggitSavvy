@@ -1,86 +1,154 @@
 import React from "react";
-import { View, TouchableOpacity, Text, ImageBackground, StyleSheet } from "react-native";
+import { View, Button, TouchableOpacity, Text } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
-
-const SectionButton = ({ title, iconName, onPress, backgroundImageUri }) => (
-  <TouchableOpacity style={styles.sectionButton} onPress={onPress} activeOpacity={0.7}>
-    <ImageBackground
-      source={{ uri: backgroundImageUri }}
-      resizeMode="cover"
-      style={styles.imageBackground}
-      imageStyle={styles.imageBackgroundStyle}
-    >
-      <View style={styles.textBackground}>
-        <Text style={styles.sectionText}>
-          <FontAwesome name={iconName} size={24} color="#fff" /> {title}
-        </Text>
-      </View>
-    </ImageBackground>
-  </TouchableOpacity>
-);
+import { AntDesign } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 export default function LearningNavigationHome({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Learning Navigation Home</Text>
-      <SectionButton
-        title="Bite-sized Learning Lessons"
-        iconName="book"
-        backgroundImageUri="https://miro.medium.com/v2/resize:fit:560/1*l63h6GuqpS-VfilKssFHZw.png"
-        onPress={() => navigation.navigate("BiteSizeNavigation")}
-      />
-      <SectionButton
-        title="Podcasts"
-        iconName="podcast"
-        backgroundImageUri="https://media.istockphoto.com/id/1283532997/vector/podcast-concept-thin-line-icon-abstract-icon-abstract-gradient-background-modern-sound-wave.jpg?s=612x612&w=0&k=20&c=YLg7rHeSuYqeIuGRAcvf2a7J8X8Sx-IkmqYHXIJGPYQ="
-        onPress={() => navigation.navigate("BiteSizeNavigation")}
-      />
-      <SectionButton
-        title="Mentorship"
-        iconName="users"
-        backgroundImageUri="https://media.istockphoto.com/id/1334472503/photo/indian-ceo-mentor-leader-talking-to-female-trainee-using-laptop-at-meeting.jpg?s=612x612&w=0&k=20&c=RypRc4QwkdD-ke1kY5dpBfiGpD2mQNFrXwNJj1W-wEo="
-        onPress={() => navigation.navigate("TabNavigation")}
-      />
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#406882",
+      }}
+    >
+      <Text
+        style={{
+          fontSize: 22,
+          fontWeight: "bold",
+          marginBottom: 20,
+          fontFamily: "Inter-Bold",
+          color: "#fdfdfd",
+        }}
+      >
+        Learning Navigation Home
+      </Text>
+      <TouchableOpacity
+        style={{
+          height: 150,
+          width: "85%",
+          backgroundColor: "#fdfdfd",
+          borderRadius: 15,
+          marginVertical: 8,
+          justifyContent: "space-between",
+          alignItems: "flex-start",
+          padding: 15,
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 0,
+            height: 2,
+          },
+          shadowOpacity: 1.5,
+          shadowRadius: 3.84,
+          elevation: 5,
+        }}
+        onPress={() => {
+          navigation.navigate("BiteSizeNavigation");
+        }}
+      >
+        {/* // <View style={{ flexDirection: "row", alignItems: "center" }}> */}
+        <AntDesign name="book" size={40} color="#406882" />
+        <Text
+          style={{
+            color: "#406882",
+            fontSize: 20,
+            fontFamily: "Inter-Bold",
+            // position: "absolute",
+            // left: 15,
+            // top: 110,
+            // marginLeft: 10,
+          }}
+        >
+          Bite-sized Learning
+        </Text>
+        {/* // </View> */}
+      </TouchableOpacity>
+
+      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+        <TouchableOpacity
+          style={{
+            height: 150,
+            width: "40%",
+            backgroundColor: "#fdfdfd",
+            borderRadius: 15,
+            marginVertical: 22,
+            marginHorizontal: 11,
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            padding: 15,
+            shadowColor: "#000",
+            shadowOffset: {
+              width: 0,
+              height: 2,
+            },
+            shadowOpacity: 1.5,
+            shadowRadius: 3.84,
+            elevation: 5,
+          }}
+          onPress={() => {
+            navigation.navigate("PodcastNavigation");
+          }}
+        >
+          <View style={{ justifyContent: "space-between", flex: 1 }}>
+            <FontAwesome name="podcast" size={40} color="#406882" />
+            <Text
+              style={{
+                color: "#406882",
+                fontSize: 20,
+                fontFamily: "Inter-Bold",
+                position: "absolute",
+                // left: 15,
+                top: 95,
+              }}
+            >
+              Podcasts
+            </Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={{
+            height: 150,
+            width: "40%",
+            backgroundColor: "#fdfdfd",
+            borderRadius: 15,
+            marginVertical: 22,
+            marginHorizontal: 11,
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            padding: 15,
+            shadowColor: "#000",
+            shadowOffset: {
+              width: 0,
+              height: 2,
+            },
+            shadowOpacity: 1.5,
+            shadowRadius: 3.84,
+            elevation: 5,
+          }}
+          onPress={() => {
+            navigation.navigate("MentorshipNavigation");
+          }}
+        >
+          <View style={{ justifyContent: "space-between", flex: 1 }}>
+            <FontAwesome5 name="chalkboard-teacher" size={40} color="#406882" />
+            <Text
+              style={{
+                color: "#406882",
+                fontSize: 20,
+                fontFamily: "Inter-Bold",
+                position: "absolute",
+                // left: 15,
+                top: 95,
+              }}
+            >
+              Mentorship
+            </Text>
+          </View>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#fdfdfd",
-  },
-  header: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 20,
-  },
-  sectionButton: {
-    height: 120,
-    width: "90%",
-    borderRadius: 20,
-    marginVertical: 12,
-    overflow: "hidden",
-  },
-  imageBackground: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  imageBackgroundStyle: {
-    borderRadius: 20,
-  },
-  textBackground: {
-    backgroundColor: "rgba(0,0,0,0.3)",
-    padding: 10,
-    borderRadius: 20,
-  },
-  sectionText: {
-    color: "#fff",
-    fontSize: 18,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-});
