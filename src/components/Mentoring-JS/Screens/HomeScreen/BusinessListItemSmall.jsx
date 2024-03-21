@@ -23,7 +23,7 @@ export default function BusinessListItemSmall({business}) {
             fontSize:10,
             fontFamily:'outfit',
             padding:3,
-            color:Colors.PRIMARY,
+            color:Colors.WHITE,
             backgroundColor:Colors.PRIMARY_LIGHT,
             borderRadius:3,
             alignSelf:'flex-start',

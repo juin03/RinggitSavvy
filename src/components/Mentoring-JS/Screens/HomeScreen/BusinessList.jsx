@@ -23,7 +23,7 @@ export default function BusinessList() {
     }
   return (
     <View style={{marginTop:20}}>
-      <Heading text={'Latest Business'} isViewAll={true} />
+      <Heading text={'Available Mentors'} isViewAll={true} />
 
       <FlatList
       data={businessList}

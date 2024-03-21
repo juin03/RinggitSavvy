@@ -1,9 +1,9 @@
 export default{
     BLACK:'#000000',
-    PRIMARY:'#9f5bff',
+    PRIMARY:'#406882',
     WHITE:'#ffffff',
     LIGHT_GRAY:'#EDEDED',
-    PRIMARY_LIGHT:'#F1DEFF',
+    PRIMARY_LIGHT:'#6998AB',
     GRAY:'#7f7f7f',
     LIGHT_GREEN:'#BEF2C3',
     LIGHT_RED:'#F2BEBE',

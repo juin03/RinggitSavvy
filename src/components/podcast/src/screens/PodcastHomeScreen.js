@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Image} from 'react-native';
 import TitleBar from '../components/Titlebar';
-import Podcast from '../components/podcastDisplay';
+import Podcast from '../components/PodcastDisplay';
 import PodcastPlaylist from '../components/PodcastPlaylist';
 
 const PodcastHomeScreen = ({navigation}) => {

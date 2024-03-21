@@ -1,7 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import PodcastHome from '../src/screens/podcastHomeScreen';
-import PodcastPlay from '../src/screens/podcastPlaying';
+import PodcastHome from '../src/screens/PodcastHomeScreen';
+import PodcastPlay from '../src/screens/PodcastPlaying';
 import { NavigationContainer } from '@react-navigation/native';
 
 

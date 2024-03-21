@@ -19,7 +19,7 @@ export default function Slider() {
     }
   return (
     <View>
-        <Heading text={'Offers For You'} />
+        <Heading text={'Mentorship Portal'} />
       <FlatList
         data={slider}
         horizontal={true}
