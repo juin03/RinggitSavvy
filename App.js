@@ -38,15 +38,6 @@ export default function App() {
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen name="Home" component={BottomTab} options={{ headerShown: false }}/>
-            {/* <Stack.Screen name="OnboardingNavigation" component={OnboardingNavigation} options={{ headerShown: false }}/>
-            <Stack.Screen name="NewsHomeNavigator" component={NewsHomeNavigator} options={{ headerShown: false }}/>
-            <Stack.Screen name="ChatbotNavigation" component={ChatbotNavigation} options={{ headerShown: false }}/>
-            <Stack.Screen name="BiteSizeNavigation" component={BiteSizeNavigation} options={{ headerShown: false }}/>
-            <Stack.Screen name="QuizNavigator" component={QuizNavigator} options={{ headerShown: false }}/>
-            <Stack.Screen name="Route" component={Route} options={{ headerShown: false }}/>
-            <Stack.Screen name="TabNavigation" component={TabNavigation} options={{ headerShown: false }}/>
-            <Stack.Screen name="LearningNavigationHome" component={LearningNavigationHome} options={{ headerShown: false }}/>
-            <Stack.Screen name="EditProfile" component={EditProfile} options={{ headerShown: false }}/> */}
           </Stack.Navigator>
         </NavigationContainer>
       </SignedIn>

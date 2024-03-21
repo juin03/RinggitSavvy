@@ -7,27 +7,27 @@ function CategoryTextSlider({selectCategory}) {
   const categoryList = [
     {
       id: 1,
-      name: 'Latest'
+      name: 'Latest ⚡'
     },
     {
       id: 2,
-      name: 'World'
+      name: 'World 🌎'
     },
     {
       id: 3,
-      name: 'Business'
+      name: 'Business 💵'
     },
     {
       id: 4,
-      name: 'Sports'
+      name: 'Sports 🏃🏻'
     },
     {
       id: 5,
-      name: 'Life'
+      name: 'Life 🌴'
     },
     {
       id: 6,
-      name: 'Movie'
+      name: 'Movie 🎥'
     },
   ]; 
 
@@ -36,14 +36,14 @@ function CategoryTextSlider({selectCategory}) {
   }
 
   return (
-    <View style={{ marginTop: 10 }}>
+    <View style={{ marginTop: 20, marginBottom: 8 }}>
       <FlatList
         data={categoryList}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
           <TouchableOpacity onPress={() => {onCategoryClick(item.id); selectCategory(item.name)}}>
-            <Text style={item.id === active ? styles.selectText : styles.unselectText}>{item.name}</Text>
+            <Text style={item.id === active ? styles.selectText : styles.unselectText} >{item.name}</Text>
           </TouchableOpacity>
         )}
       />
@@ -53,16 +53,26 @@ function CategoryTextSlider({selectCategory}) {
 
 const styles = StyleSheet.create({
   unselectText: {
-    marginRight: 25,
-    fontSize: 22,
-    fontWeight: '800',
-    color: Color.gray,
+    marginRight: 14,
+    fontSize: 18,
+    fontWeight: '300',
+    color: "#8194FC",
+    backgroundColor: "#DDE7FF",
+    paddingHorizontal: 15,
+    paddingVertical: 4,
+    borderRadius: 20,
+    borderWidth: 0,
   },
   selectText: {
-    marginRight: 25,
-    fontSize: 22,
-    fontWeight: '900',
-    color: Color.primary,
+    marginRight: 14,
+    fontSize: 18,
+    fontWeight: '300',
+    color: "white",
+    backgroundColor: "#3353DC",
+    paddingHorizontal: 15,
+    paddingVertical: 4,
+    borderRadius: 20,
+    borderWidth: 0,
   }
 });
 
