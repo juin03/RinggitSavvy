@@ -4,18 +4,13 @@ import React from 'react';
 import { StyleSheet} from 'react-native';
 import { useFonts } from 'expo-font';
 import BottomTab from './BottomTab';
-import OnboardingNavigation from './src/components/Onboarding-JS/Navigation/OnboardingNavigation';
-import NewsHomeNavigator from './src/components/NewsHome-JS/Navigations/NewsHomeNavigator';
-import ChatbotNavigation from './src/components/ChatBot-JS/Navigations/ChatbotNavigation';
-import BiteSizeNavigation from './src/components/bitesizedlearning-JS/Navigations/BiteSizeNavigation';
-import Route from './src/components/Community-JS/Routes';
-import QuizNavigator from './src/components/Quiz-JS/Navigations/QuizNavigator';
-import TabNavigation from './src/components/Mentoring-JS/Navigations/TabNavigation';
-import LearningNavigationHome from './src/components/Learning-JS/LearningNavigationHome';
 import { Clerk, ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
 import SignInWithOAuth from './SignInWithOAuth';
-import EditProfile from './src/components/Profile-JS/Profile-JS/EditProfile';
-
+import { LogBox } from 'react-native';
+import { Text } from 'react-native-render-html';
+import { useUser} from '@clerk/clerk-expo'
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +26,9 @@ export default function App() {
     "outfit-medium": require('./assets/fonts/Outfit-Medium.ttf'),
     "outfit-bold": require('./assets/fonts/Outfit-Bold.ttf'),
   });
+
+  console.disableYellowBox = true;
+
 
   return (
     <ClerkProvider publishableKey='pk_test_aGVscGVkLWRvcnktMjYuY2xlcmsuYWNjb3VudHMuZGV2JA'>

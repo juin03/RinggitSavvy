@@ -15,10 +15,10 @@ export default function HomeScreenNavigation() {
   return (
     // <NavigationContainer>
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="BiteSizeHome"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="BiteSizeHome" component={HomeScreen} />
       <Stack.Screen name="course-detail" component={CourseDetailScreen} />
       <Stack.Screen name="chapter-content" component={ChapterContentScreen} />
     </Stack.Navigator>

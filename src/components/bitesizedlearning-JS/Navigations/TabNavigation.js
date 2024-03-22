@@ -12,11 +12,11 @@ export default function TabNavigation() {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
-        name="Home"
+        name="HomeScreenNavigation"
         component={HomeScreenNavigation}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home" size={24} color="black" />
+            <Ionicons name="HomeScreenNavigation" size={24} color="black" />
           ),
         }}
       />

@@ -1,8 +1,10 @@
 import React from 'react';
 import {View , Text, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useUser} from '@clerk/clerk-expo'
 
 const ProfileScreen = () => {
+  const {user,isLoading} = useUser()
   return (
     <View style = {styles.container}>
       <View style = {styles.header}>
@@ -13,14 +15,14 @@ const ProfileScreen = () => {
       <View style={styles.profileContainer}>
         <View>
             <Image
-              source={{ uri: 'https://media.licdn.com/dms/image/D4E03AQH8qKoObk8Emw/profile-displayphoto-shrink_800_800/0/1667745287740?e=1716422400&v=beta&t=a3a-RLv-r9H0INO9_QKJp892sLue1MZ4cCE2grGGGlw' }}
+              source={{uri:user?.imageUrl}} 
               style={styles.profilePic}
               resizeMode="cover"
             />        
         </View>
         <View style ={styles.BioContainer}>
-          <Text style ={styles.headerText}>Username</Text>
-          <Text style ={{color: '#555555'}}>Country</Text>
+          <Text style ={styles.headerText}>{user?.fullName}</Text>
+          <Text style={{ color: '#555555' }}>{user?.primaryEmailAddress?.emailAddress}</Text>
           <TouchableOpacity>
             <Text style ={{color: '#406882', fontWeight:'bold'}}>Edit Profile</Text>
             </TouchableOpacity>
@@ -29,11 +31,10 @@ const ProfileScreen = () => {
 
       <View style ={styles.InfoCotainer}>
         <View style ={styles.joinDateContainer}>
-          <Text style ={styles.greyText}>userNickname</Text>
+        <Text style = {styles.greyText}>Logged in with Google</Text> 
           <Text style ={styles.greyText}>joined March 2024</Text>
         </View>
         <View>
-          <Text style = {styles.greyText}>Logged in with Google</Text> 
         </View>
       </View>
 
