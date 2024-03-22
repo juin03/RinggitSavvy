@@ -12,7 +12,11 @@ const ProfileScreen = () => {
 
       <View style={styles.profileContainer}>
         <View>
-          <Image source={require('../../../../assets/profilePic.png')} style={styles.profilePic} resizeMode="cover"></Image>
+            <Image
+              source={{ uri: 'https://media.licdn.com/dms/image/D4E03AQH8qKoObk8Emw/profile-displayphoto-shrink_800_800/0/1667745287740?e=1716422400&v=beta&t=a3a-RLv-r9H0INO9_QKJp892sLue1MZ4cCE2grGGGlw' }}
+              style={styles.profilePic}
+              resizeMode="cover"
+            />        
         </View>
         <View style ={styles.BioContainer}>
           <Text style ={styles.headerText}>Username</Text>

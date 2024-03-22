@@ -6,7 +6,7 @@ import NewsHomeNavigator from './src/components/NewsHome-JS/Navigations/NewsHome
 import ChatbotNavigation from './src/components/ChatBot-JS/Navigations/ChatbotNavigation';
 import Community from './src/components/Community-JS/Routes';
 import LearningNavigationHome from './src/components/Learning-JS/LearningNavigation';
-import EditProfile from './src/components/Profile-JS/Profile-JS/EditProfile';
+import ProfileScreen from './src/components/Profile-JS/Profile-JS/MyProfile';
 
 
 
@@ -28,7 +28,7 @@ export default function HomeScreen({ navigation }) {
           iconName = focused ? 'chatbubbles' : 'chatbubbles-outline';
         } else if (route.name === 'Learning') {
           iconName = focused ? 'book' : 'book-outline';
-        } else if (route.name === 'EditProfile') {
+        } else if (route.name === 'ProfileScreen') {
           iconName = focused ? 'person' : 'person-outline';
         }
 
@@ -45,7 +45,7 @@ export default function HomeScreen({ navigation }) {
     <Tab.Screen name="News" component={NewsHomeNavigator} options={{ headerShown: false }}/>
     <Tab.Screen name="ChatBot" component={ChatbotNavigation} options={{ headerShown: false }}/>
     <Tab.Screen name="Learning" component={LearningNavigationHome} options={{ headerShown: false }}/>      
-    <Tab.Screen name="EditProfile" component={EditProfile} options={{ headerShown: false }}/>
+    <Tab.Screen name="ProfileScreen" component={ProfileScreen} options={{ headerShown: false }}/>
   </Tab.Navigator>
 );
 }
