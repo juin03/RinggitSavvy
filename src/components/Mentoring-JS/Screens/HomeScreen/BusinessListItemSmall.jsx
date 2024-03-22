@@ -20,7 +20,7 @@ export default function BusinessListItemSmall({business}) {
         <Text style={{fontSize:13,fontFamily:'outfit',
     color:Colors.GRAY}}>{business?.contactPerson}</Text>
         <Text style={{
-            fontSize:10,
+            fontSize:11,
             fontFamily:'outfit',
             padding:3,
             color:Colors.WHITE,

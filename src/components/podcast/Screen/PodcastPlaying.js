@@ -21,7 +21,7 @@ const PodcastPlaying = () => {
         </Text>
       </View>
       <View style= {styles.albumContainer}>
-        <Image source={require('../../assets/podcast3.png')} style={styles.podcastAlbum} ></Image>
+        <Image source={require('../../../../assets/Podcast/podcast3.png')} style={styles.podcastAlbum} ></Image>
       </View>
 
       <View style = {styles.TitleContainer}> 
