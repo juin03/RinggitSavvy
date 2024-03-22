@@ -1,11 +1,12 @@
 import { View, Image, ScrollView, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
-import Colors from './../utils/Colors';
-import * as ProfileData from './../data/Profile';
+import Colors from '../../Community-JS/utils/Colors';
+import * as ProfileData from '../../Community-JS/data/Profile';
 import Icon from 'react-native-vector-icons/Entypo';
-import CustomIcon from './../components/CustomIcon';
-import Heading from '../components/Heading';
-import { useUser} from '@clerk/clerk-expo'
+import CustomIcon from '../../Community-JS/components/CustomIcon';
+import Heading from '../../Community-JS/components/Heading';
+import { useUser} from '@clerk/clerk-expo';
+import MentorPicture from '../assets/MentorPicture.png';
 
 
 export default function Profile() {
@@ -30,10 +31,10 @@ export default function Profile() {
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={{ backgroundColor: Colors.WHITE, marginBottom: 10 }}>
         <Image source={DATA.INFO.banner} style={{ width: "100%", height: 120 }} />
-        <Image source={{uri:user?.imageUrl}}  style={{ borderRadius: 100, height: 100, width: 100, borderColor: Colors.WHITE, borderWidth: 3, bottom: 50, left: 15 }} />
+        <Image source={MentorPicture}  style={{ borderRadius: 100, height: 100, width: 100, borderColor: Colors.WHITE, borderWidth: 3, bottom: 50, left: 15 }} />
 
         <View style={{ marginTop: -45, paddingHorizontal: 10 }}>
-          <Text style={{ fontSize: 28, fontWeight: "bold", color: Colors.BLACK, width:360 }}>{user?.fullName}</Text>
+          <Text style={{ fontSize: 28, fontWeight: "bold", color: Colors.BLACK, width:360 }}>Charles Lim</Text>
           <Text style={{ fontSize: 16, color: Colors.BLACK }}>{DATA.INFO.bio}</Text>
           <Text style={{ marginTop: 4, marginBottom: 10, color: Colors.GRAY }}>Talks about - {DATA.INFO.talksAbout.map(item => `${item} `)}</Text>
 

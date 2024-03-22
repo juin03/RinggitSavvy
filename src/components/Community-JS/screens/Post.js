@@ -3,8 +3,12 @@ import Colors from '../utils/Colors';
 import Images from '../utils/Images';
 import Styles from '../utils/Styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useUser} from '@clerk/clerk-expo'
+
 
 export default function Post() {
+  const {user,isLoading} = useUser()
+
   const list = [
     { title: 'Add a photo', icon: 'photo' },
     { title: 'Take a video', icon: 'video-camera' },
@@ -39,10 +43,10 @@ export default function Post() {
     <View style={{ backgroundColor: Colors.WHITE, flex: 1 }}>
       <View
         style={{ paddingHorizontal: 20, marginTop: 20, height: 250, flex: 1 }}>
-        <Image
-          source={Images.PROFILE_PICTURE}
+        {/* <Image
+         source={{uri:user?.imageUrl}}
           style={{ height: 46, width: 46 }}
-        />
+        /> */}
 
         <TextInput placeholder='What do you want to talk about?' style={{ color: Colors.BLACK, fontSize: 19, paddingTop: 16 }} placeholderTextColor={{ color: Colors.GRAY }} />
       </View>

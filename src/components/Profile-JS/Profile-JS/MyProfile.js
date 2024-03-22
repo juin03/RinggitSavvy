@@ -1,164 +1,113 @@
 import React from 'react';
-import {View , Text, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native';
+import { View, Text, StyleSheet, Image, Switch, ScrollView, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useUser } from '@clerk/clerk-expo';
 
 const ProfileScreen = () => {
+  const { user } = useUser();
+  const [isNotificationsEnabled, setNotificationsEnabled] = React.useState(true);
+
+  const toggleNotifications = () => setNotificationsEnabled(previousState => !previousState);
+
   return (
-    <View style = {styles.container}>
-      <View style = {styles.header}>
-        <Text style ={styles.headerText}>Account</Text>
-        <MaterialIcons name="logout" size={28} color="black" />
+    <ScrollView style={styles.container}>
+      <View style={{display:"flex",alignItems:"center", justifyContent:"center"}}>
+        <Text style={{fontWeight: 800, fontSize: 25}}>Profile</Text>
       </View>
-
       <View style={styles.profileContainer}>
-        <View>
-            <Image
-              source={{ uri: 'https://media.licdn.com/dms/image/D4E03AQH8qKoObk8Emw/profile-displayphoto-shrink_800_800/0/1667745287740?e=1716422400&v=beta&t=a3a-RLv-r9H0INO9_QKJp892sLue1MZ4cCE2grGGGlw' }}
-              style={styles.profilePic}
-              resizeMode="cover"
-            />        
-        </View>
-        <View style ={styles.BioContainer}>
-          <Text style ={styles.headerText}>Username</Text>
-          <Text style ={{color: '#555555'}}>Country</Text>
-          <TouchableOpacity>
-            <Text style ={{color: '#406882', fontWeight:'bold'}}>Edit Profile</Text>
-            </TouchableOpacity>
-        </View>
+        <Image
+          source={{ uri: user?.imageUrl }}
+          style={styles.profilePic}
+          resizeMode="cover"
+        />
+        <Text style={styles.fullName}>{user?.fullName || 'Your Name'}</Text>
+        <Text style={styles.email}>{user?.primaryEmailAddress?.emailAddress || 'your-email@example.com'}</Text>
       </View>
 
-      <View style ={styles.InfoCotainer}>
-        <View style ={styles.joinDateContainer}>
-          <Text style ={styles.greyText}>userNickname</Text>
-          <Text style ={styles.greyText}>joined March 2024</Text>
-        </View>
-        <View>
-          <Text style = {styles.greyText}>Logged in with Google</Text> 
-        </View>
+      <View style={styles.settingsContainer}>
+        <SettingOption icon="account-circle" title="My Account" />
+        <SettingOption icon="notifications" title="Notification" isSwitch={true} switchValue={isNotificationsEnabled} onToggle={toggleNotifications} />
+        <SettingOption icon="share" title="Share Taska" />
+        <SettingOption icon="help-outline" title="Help & Feedback" />
+        <SettingOption icon="star-border" title="Rate Us" />
       </View>
 
-      <View style ={styles.RiskContainer}>
-        <TouchableOpacity>
-          <Text>
-           Your Risk Tolerance Asssessment Result was
-          </Text>   
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.SettingContainer}>
-        <Text style={styles.headerText}>Settings</Text>
-      </View>
-
-      <View style ={styles.SettingsButton}>
-          <TouchableOpacity style={styles.ButtonPattern }> 
-              <Text style={styles.ButtonText}>Subscription</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.ButtonPattern }> 
-              <Text style={styles.ButtonText}>Notification</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.ButtonPattern }> 
-              <Text style={styles.ButtonText}>FAQ</Text>
-          </TouchableOpacity>
-        </View>
-
-    </View>
+      <Text style={styles.versionText}>Taska v1.0</Text>
+    </ScrollView>
   );
 }
 
-export default ProfileScreen;
-
+const SettingOption = ({ icon, title, isSwitch, switchValue, onToggle }) => (
+  <View style={styles.settingOption}>
+    <MaterialIcons name={icon} size={24} color="#555" />
+    <Text style={styles.settingOptionText}>{title}</Text>
+    {isSwitch && (
+      <Switch
+        trackColor={{ false: "#767577", true: "#81b0ff" }}
+        thumbColor={switchValue ? "#f5dd4b" : "#f4f3f4"}
+        onValueChange={onToggle}
+        value={switchValue}
+        style={styles.switch}
+      />
+    )}
+  </View>
+);
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
+    paddingTop: 50,
   },
-
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    margin: 30,
-  },
-
-  headerText: {
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-
   profileContainer: {
-    // backgroundColor: '#662251',
-    flexDirection: 'row',
-    marginLeft: 30,
-  },
-
-  profilePic: {
-    width: 70,
-    height: 70,
-    borderRadius: 50,
-    
-  },
-
-  BioContainer: {
-    backgroundColor: '#FFFFFF',
-    marginLeft: 20,
-  },
-
-  InfoCotainer: {
-    // backgroundColor:'#298233',
-    marginLeft: 20,
-    marginRight: 20,
-    marginTop: 20,
-    paddingBottom: 10,
-    paddingLeft: 10,
-    paddingRight: 10,
-    borderColor: '#000000',
+    alignItems: 'center',
+    paddingVertical: 40,
     borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+    marginBottom: 10,
   },
-
-  joinDateContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  profilePic: {
+    width: 80,
+    height: 80,
+    borderRadius: 80,
+    borderWidth: 1,
+    borderColor: 'black',
+    marginBottom: 10,
   },
-
-  greyText: {
-    color: '#999999',
-  },
-
-  RiskContainer: {
-    width: 300,
-    height: 200,
-    alignContent: 'center',
-    justifyContent: 'center',
-    // backgroundColor: '#626262',
-    marginTop: 20,
-    marginLeft: 40,
-  },
-
-  SettingContainer: {
-    marginTop: 20,
-    marginLeft: 30,
-    // backgroundColor: '#888888',
-    
-  },
-
-  SettingsButton: {
-    // backgroundColor: '#822122',
-    width:'95%',
-    alignSelf: 'center',
-    padding: 10,
-  },
-
-  ButtonPattern: {
-    padding: 20,
-    borderRadius: 10,
-    marginTop: 10,
-    borderColor: '#000000',
-    backgroundColor: '#F5F8FF',
-    // borderWidth: 1,
-  },
-
-  ButtonText: {
-    color: '#000000',
-    fontSize: 18,
+  fullName: {
+    fontSize: 22,
     fontWeight: 'bold',
+    color: '#333',
+  },
+  email: {
+    fontSize: 16,
+    color: '#666',
+  },
+  settingsContainer: {
+    paddingHorizontal: 20,
+  },
+  settingOption: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+  },
+  settingOptionText: {
+    flex: 1,
+    marginLeft: 10,
+    fontSize: 18,
+    color: '#333',
+  },
+  switch: {
+    transform: [{ scaleX: .8 }, { scaleY: .8 }],
+  },
+  versionText: {
+    textAlign: 'center',
+    color: '#666',
+    paddingVertical: 20,
   },
 });
+
+export default ProfileScreen;

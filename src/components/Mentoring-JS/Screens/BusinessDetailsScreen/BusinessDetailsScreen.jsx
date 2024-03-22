@@ -44,9 +44,13 @@ export default function BusinessDetailsScreen() {
               <Text style={{color:Colors.PRIMARY,backgroundColor:Colors.PRIMARY_LIGHT,
               padding:5,borderRadius:5,fontSize:14}}>{business?.category?.name}</Text>
           </View>
-          <Text style={{fontSize:17,fontFamily:'outfit',color:Colors.GRAY}}>
-          <Ionicons name="location-sharp" size={25} 
-            color={Colors.PRIMARY}  />{business?.address}</Text>
+          
+          <View style={{display:"flex", flexDirection:"row"}}>
+            <Ionicons name="location-sharp" size={25} 
+              color={Colors.PRIMARY}  />
+            <Text style={{fontSize:17,fontFamily:'outfit',color:Colors.GRAY}}>{business?.address}</Text>
+          </View>
+            
        
             {/* Horizontal Line  */}
             <View style={{borderWidth:0.4,borderColor:Colors.GRAY,marginTop:20,
@@ -71,14 +75,14 @@ export default function BusinessDetailsScreen() {
       gap:8
     }}>
       <TouchableOpacity style={styles.messagebtn}
-      onPress={()=>onMessageBtnClick()}
+      onPress={() => navigation.navigate("MentorProfile")}
       >
         <Text style={{
           textAlign:'center',
           fontFamily:'outfit-medium',
           color:Colors.PRIMARY,
           fontSize:18
-        }}>Message</Text>
+        }}>View Profile</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.bookingBtn}
       onPress={()=>setShowModal(true)}>
@@ -121,7 +125,7 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
   messagebtn:{
-    padding:15,
+    padding:10,
     backgroundColor:Colors.white,
     borderWidth:1,
     borderColor:Colors.PRIMARY,
@@ -129,7 +133,7 @@ const styles = StyleSheet.create({
     flex:1,
   },
   bookingBtn:{
-    padding:15,
+    padding:10,
     backgroundColor:Colors.PRIMARY,
     borderWidth:1,
     borderColor:Colors.PRIMARY,
