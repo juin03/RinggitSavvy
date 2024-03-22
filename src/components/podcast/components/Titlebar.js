@@ -6,7 +6,7 @@ const TitleBar = () => {
   return (
     <View style={styles.Title_container}>
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-        <Image style={styles.image} source={require('../../assets/ringgitSavvyIcon.png')} />
+        <Image style={styles.image} source={require('../../../../assets/RinggitSavvyIcon.png')} />
         <Text style={styles.Title_text}>RinggitSavvy • Podcast</Text>
       </View>
       <FontAwesome name="search" size={24} color="white" />
