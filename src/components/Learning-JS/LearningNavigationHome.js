@@ -11,19 +11,19 @@ export default function LearningNavigationHome({ navigation }) {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#406882",
+        backgroundColor: "#6998AB",
       }}
     >
       <Text
         style={{
-          fontSize: 22,
+          fontSize: 26,
           fontWeight: "bold",
           marginBottom: 20,
           fontFamily: "Inter-Bold",
           color: "#fdfdfd",
         }}
       >
-        Learning Navigation Home
+        Learning Hub
       </Text>
       <TouchableOpacity
         style={{
@@ -40,16 +40,18 @@ export default function LearningNavigationHome({ navigation }) {
             width: 0,
             height: 2,
           },
-          shadowOpacity: 1.5,
-          shadowRadius: 3.84,
-          elevation: 5,
+          shadowOpacity: 0.35,
+          shadowOffset: { width: 0, height: 20 },
+          shadowRadius: 44,
+          shadowColor: "#fdfdfd",
+          // elevation: 5,
         }}
         onPress={() => {
           navigation.navigate("BiteSizeNavigation");
         }}
       >
         {/* // <View style={{ flexDirection: "row", alignItems: "center" }}> */}
-        <AntDesign name="book" size={40} color="#406882" />
+        <FontAwesome name="book" size={40} color="#406882" />
         <Text
           style={{
             color: "#406882",
@@ -83,9 +85,11 @@ export default function LearningNavigationHome({ navigation }) {
               width: 0,
               height: 2,
             },
-            shadowOpacity: 1.5,
-            shadowRadius: 3.84,
-            elevation: 5,
+            shadowOpacity: 0.35,
+            shadowOffset: { width: 0, height: 20 },
+            shadowRadius: 44,
+            shadowColor: "#fdfdfd",
+            // elevation: 5,
           }}
           onPress={() => {
             navigation.navigate("PodcastNavigation");
@@ -124,9 +128,11 @@ export default function LearningNavigationHome({ navigation }) {
               width: 0,
               height: 2,
             },
-            shadowOpacity: 1.5,
-            shadowRadius: 3.84,
-            elevation: 5,
+            shadowOpacity: 0.35,
+            shadowOffset: { width: 0, height: 20 },
+            shadowRadius: 44,
+            shadowColor: "#fdfdfd",
+            // elevation: 5,
           }}
           onPress={() => {
             navigation.navigate("MentorshipNavigation");
@@ -149,6 +155,48 @@ export default function LearningNavigationHome({ navigation }) {
           </View>
         </TouchableOpacity>
       </View>
+      <TouchableOpacity
+        style={{
+          height: 150,
+          width: "85%",
+          backgroundColor: "#fdfdfd",
+          borderRadius: 15,
+          marginVertical: 8,
+          justifyContent: "space-between",
+          alignItems: "flex-start",
+          padding: 15,
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 0,
+            height: 2,
+          },
+          shadowOpacity: 0.35,
+          shadowOffset: { width: 0, height: 20 },
+          shadowRadius: 44,
+          shadowColor: "#fdfdfd",
+          // elevation: 5,
+        }}
+        onPress={() => {
+          navigation.navigate("QuizNavigator");
+        }}
+      >
+        {/* // <View style={{ flexDirection: "row", alignItems: "center" }}> */}
+        <FontAwesome name="exclamation-triangle" size={40} color="#406882" />
+        <Text
+          style={{
+            color: "#406882",
+            fontSize: 20,
+            fontFamily: "Inter-Bold",
+            // position: "absolute",
+            // left: 15,
+            // top: 110,
+            // marginLeft: 10,
+          }}
+        >
+          Risk Assessment Test
+        </Text>
+        {/* // </View> */}
+      </TouchableOpacity>
     </View>
   );
 }
