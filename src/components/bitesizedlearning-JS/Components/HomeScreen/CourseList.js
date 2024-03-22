@@ -24,7 +24,7 @@ export default function CourseList({ level }) {
     <View>
       <SubHeading
         text={level + " Courses"}
-        color={level == "Basic" && Colors.WHITE}
+        color={level == "Basic" && Colors.BLACK}
       />
       <FlatList
         data={courseList}
@@ -39,7 +39,7 @@ export default function CourseList({ level }) {
               })
             }
           >
-            <CourseItem item={item} />
+            <CourseItem item={item} category={item.category} />
           </TouchableOpacity>
         )}
       />

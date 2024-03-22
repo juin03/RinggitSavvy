@@ -13,7 +13,7 @@ export default function Header() {
             // marginRight: 100,
             marginTop: 0,
             backgroundColor: Colors.PRIMARY,
-            height: 300,
+            height: 280,
             padding: 20,
             alignItems: "center",
           }}

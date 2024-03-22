@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react";
 import { getCourseList } from "../../Services";
 import Colors from "../../Utils/Colors";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function CourseItem({ item }) {
+  const navigtaion = useNavigation();
   return (
     <View
       style={{
@@ -30,15 +32,41 @@ export default function CourseItem({ item }) {
           {item.name}
         </Text>
 
-        <Text
+        <View
           style={{
-            marginTop: 5,
-            color: Colors.PRIMARY,
-            fontFamily: "Inter-Medium",
+            display: "flex",
+            flexDirection: "row",
+            // justifyContent: "space-between",
+            alignItems: "center",
           }}
         >
-          {item.price == "0" ? "Free" : item.price}
-        </Text>
+          <Text
+            style={{
+              marginTop: 5,
+              color: Colors.PRIMARY,
+              fontFamily: "Inter-Medium",
+            }}
+          >
+            {item.price == "0" ? "Free" : item.price}
+          </Text>
+
+          <Text
+            style={{
+              fontSize: 11,
+              fontFamily: "Inter-Regular",
+              padding: 5,
+              color: Colors.WHITE,
+              backgroundColor: Colors.PRIMARY,
+              borderRadius: 3,
+              alignSelf: "flex-start",
+              paddingHorizontal: 7,
+              marginTop: 5,
+              marginLeft: 112,
+            }}
+          >
+            {item?.category?.name || "Default"}
+          </Text>
+        </View>
 
         <View
           style={{
