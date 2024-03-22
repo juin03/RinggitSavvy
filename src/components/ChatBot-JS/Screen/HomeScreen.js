@@ -99,27 +99,26 @@ function HomeScreen() {
         showsVerticalScrollIndicator={false}
       >
         {messages.map((message, index) => {
-  const isAssistant = message.role === 'assistant';
-  if (!isAssistant) {
-    scrollToBottom();
-  }
-  return (
-    <View key={index} ref={message.ref} style={{
-      width: 280,
-      backgroundColor: isAssistant ? "#F5F5F5" : '#F0F8FF',
-      borderRadius: 12,
-      padding: 10,
-      margin: 7,
-      alignSelf: isAssistant ? 'flex-start' : 'flex-end',
-      borderTopLeftRadius: isAssistant ? 0 : 12,
-      borderTopRightRadius: isAssistant ? 12 : 0,
-    }}>
-      <Text>{isAssistant ? parseAndStyleText(message.content) : message.content}</Text>
-    </View>
-  );
-})}
-
-      </ScrollView >
+          const isAssistant = message.role === 'assistant';
+          if (!isAssistant) {
+            scrollToBottom();
+          }
+          return (
+            <View key={index} ref={message.ref} style={{
+              backgroundColor: isAssistant ? "#F5F5F5" : '#F0F8FF',
+              borderRadius: 12,
+              padding: 10,
+              margin: 7,
+              alignSelf: isAssistant ? 'flex-start' : 'flex-end',
+              borderTopLeftRadius: isAssistant ? 0 : 12,
+              borderTopRightRadius: isAssistant ? 12 : 0,
+              maxWidth: message.content.length > 20 ? '90%' : 'auto', // adjust the max width based on text length
+            }}>
+              <Text>{isAssistant ? parseAndStyleText(message.content) : message.content}</Text>
+            </View>
+          );
+        })}
+      </ScrollView>
 
       <View style={styles.inputContainer}>
         <TextInput
@@ -161,7 +160,7 @@ const styles = StyleSheet.create({
   },
   sendButton: {
     padding: 10,
-    backgroundColor: '#007bff',
+    backgroundColor: '#6998AB',
     borderRadius: 5,
   },
   sendButtonText: {

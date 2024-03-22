@@ -8,6 +8,9 @@ const ProfileScreen = () => {
   const [isNotificationsEnabled, setNotificationsEnabled] = React.useState(true);
 
   const toggleNotifications = () => setNotificationsEnabled(previousState => !previousState);
+  const handleLogout = () => {
+    // Logic for handling user logout goes here
+  };
 
   return (
     <ScrollView style={styles.container}>
@@ -27,12 +30,17 @@ const ProfileScreen = () => {
       <View style={styles.settingsContainer}>
         <SettingOption icon="account-circle" title="My Account" />
         <SettingOption icon="notifications" title="Notification" isSwitch={true} switchValue={isNotificationsEnabled} onToggle={toggleNotifications} />
-        <SettingOption icon="share" title="Share Taska" />
+        <SettingOption icon="share" title="Share RinggitSavvy" />
         <SettingOption icon="help-outline" title="Help & Feedback" />
         <SettingOption icon="star-border" title="Rate Us" />
       </View>
 
-      <Text style={styles.versionText}>Taska v1.0</Text>
+      <TouchableOpacity style={styles.logoutContainer} onPress={handleLogout}>
+        <MaterialIcons name="logout" size={24} color="#555" />
+        <Text style={styles.logoutText}>Log Out</Text>
+      </TouchableOpacity>
+
+      <Text style={styles.versionText}>RinggitSavvy v1.0</Text>
     </ScrollView>
   );
 }
@@ -62,9 +70,7 @@ const styles = StyleSheet.create({
   profileContainer: {
     alignItems: 'center',
     paddingVertical: 40,
-    borderBottomWidth: 1,
-    borderBottomColor: '#eee',
-    marginBottom: 10,
+    marginBottom: 7,
   },
   profilePic: {
     width: 80,
@@ -90,9 +96,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingVertical: 12,
+    height: 60, 
+    borderTopWidth: 1,
     borderBottomWidth: 1,
     borderBottomColor: '#eee',
+    borderTopColor: '#eee',
   },
   settingOptionText: {
     flex: 1,
@@ -107,6 +115,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#666',
     paddingVertical: 20,
+  },
+  logoutContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 20,
+    borderTopWidth: 1,
+    borderTopColor: '#eee',
+  },
+  logoutText: {
+    fontSize: 18,
+    color: '#333',
+    marginLeft: 10,
   },
 });
 
