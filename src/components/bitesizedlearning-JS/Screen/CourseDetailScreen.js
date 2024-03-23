@@ -27,7 +27,7 @@ export default function CourseDetailScreen() {
           showsVerticalScrollIndicator={false}
         >
           <TouchableOpacity onPress={() => navigate.goBack()}>
-            <Ionicons name="arrow-back" size={28} color="black" />
+            {/* <Ionicons name="arrow-back" size={28} color="black" /> */}
           </TouchableOpacity>
           <DetailSection course={params.course} />
           <ChapterSection chapterList={params.course.chapters} />

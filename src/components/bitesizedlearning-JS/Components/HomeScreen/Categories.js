@@ -32,11 +32,13 @@ export default function Categories() {
       <Heading text={"Categories"} isViewAll={true} />
       <FlatList
         data={categories}
-        numColumns={4}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        // numColumns={4}
         renderItem={({ item, index }) =>
-          index <= 3 && (
+          index <= 4 && (
             <TouchableOpacity
-              style={styles.container}
+              style={{ ...styles.container, marginRight: 29 }}
               onPress={() =>
                 navigation.push("category-list", {
                   category: item.name,
