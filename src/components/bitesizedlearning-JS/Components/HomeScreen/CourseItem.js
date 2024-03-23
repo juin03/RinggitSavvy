@@ -58,10 +58,13 @@ export default function CourseItem({ item }) {
               color: Colors.WHITE,
               backgroundColor: Colors.PRIMARY,
               borderRadius: 3,
-              alignSelf: "flex-start",
+              // alignSelf: "flex-start",
+              justifyContent: "space-between",
+              flexDirection: "row",
+              display: "flex",
               paddingHorizontal: 7,
               marginTop: 5,
-              marginLeft: 112,
+              marginLeft: 70,
             }}
           >
             {item?.category?.name || "Default"}
