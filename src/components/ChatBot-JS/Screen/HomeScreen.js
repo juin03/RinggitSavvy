@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, } from 'react';
 import {
   View,
   Text,
@@ -9,10 +9,13 @@ import {
   findNodeHandle,
   ActivityIndicator,
 } from 'react-native';
+import { Image } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { ScrollView } from 'react-native-gesture-handler';
 import { WelcomingMessage } from '../Constant/WelcomingMessage';
 import { apiCall } from '../api/openAI';
+import { LinearGradient } from 'expo-linear-gradient';
+
 
 function parseAndStyleText(text) {
   const parts = text.split(/(\*\*.*?\*\*)/g);
@@ -83,19 +86,37 @@ function HomeScreen() {
 
   return (
     <KeyboardAwareScrollView
-      style={{ flex: 1 }}
+      style={{ flex: 1, backgroundColor: 'white'}}
       resetScrollToCoords={{ x: 0, y: 0 }}
       contentContainerStyle={{ alignItems: 'center' }}
       scrollEnabled={true}
       keyboardShouldPersistTaps='handled'
     >
-      <View style={{ marginTop: 40, alignItems: 'center' }}>
-        <Text style={{ fontSize: 20, fontWeight: 'bold', marginTop: 20 }}>Welcome to Chatbot</Text>
-      </View>
+      {/* <View style={{ marginTop: 40, backgroundColor: "#406882" }}>
+        <Text style={{ fontSize: 18, fontWeight: 'bold', marginTop: 20 }}>Welcome to Chatbot</Text>
+      </View> */}
+      
+      <LinearGradient
+        // Linear Gradient props
+        colors={['#406882', '#6998AB']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 0 }}
+        style={styles.header}
+      >
+        <Image
+          source={{
+            uri: 'https://static.vecteezy.com/system/resources/previews/010/054/157/original/chat-bot-robot-avatar-in-circle-round-shape-isolated-on-white-background-stock-illustration-ai-technology-futuristic-helper-communication-conversation-concept-in-flat-style-vector.jpg',
+          }}
+          style={{ width: 45, height: 45, borderRadius: 50, marginLeft: 20 }}
+        />
+        <Text style={styles.headerText}>Ringgit Bot</Text>
+      </LinearGradient>
+
+
 
       <ScrollView
         ref={scrollViewRef}
-        style={{ height: 580, width: '90%', backgroundColor: '#D3D3D3', marginTop: 20, borderRadius: 15 }}
+        style={{ height: 590, width: '98%', backgroundColor: 'white', marginTop: 5, borderRadius: 15 }}
         showsVerticalScrollIndicator={false}
       >
         {messages.map((message, index) => {
@@ -105,19 +126,34 @@ function HomeScreen() {
           }
           return (
             <View key={index} ref={message.ref} style={{
-              backgroundColor: isAssistant ? "#F5F5F5" : '#F0F8FF',
-              borderRadius: 12,
-              padding: 10,
-              margin: 7,
+              flexDirection: 'row', // Use row direction to place elements side by side
               alignSelf: isAssistant ? 'flex-start' : 'flex-end',
-              borderTopLeftRadius: isAssistant ? 0 : 12,
-              borderTopRightRadius: isAssistant ? 12 : 0,
-              maxWidth: message.content.length > 20 ? '90%' : 'auto', // adjust the max width based on text length
+              maxWidth: '90%', // Control the maximum width
+              margin: 7,
             }}>
-              <Text>{isAssistant ? parseAndStyleText(message.content) : message.content}</Text>
+              {isAssistant && (
+                <Image
+                  source={{
+                    uri: 'https://static.vecteezy.com/system/resources/previews/010/054/157/original/chat-bot-robot-avatar-in-circle-round-shape-isolated-on-white-background-stock-illustration-ai-technology-futuristic-helper-communication-conversation-concept-in-flat-style-vector.jpg',
+                  }}
+                  style={{ width: 30, height: 30, borderRadius: 15, alignSelf: 'flex-start', marginRight: 5 }}
+                />
+              )}
+              <View style={{
+                backgroundColor: isAssistant ? "#F5F5F5" : '#B1D0E0',
+                borderRadius: 12,
+                padding: 10,
+                maxWidth: '90%', // Ensure the text container utilizes maximum width
+                borderTopLeftRadius: isAssistant ? 0 : 12,
+                borderTopRightRadius: isAssistant ? 12 : 0,
+              }}>
+                <Text>{isAssistant ? parseAndStyleText(message.content) : message.content}</Text>
+              </View>
             </View>
           );
         })}
+
+
       </ScrollView>
 
       <View style={styles.inputContainer}>
@@ -148,6 +184,20 @@ const styles = StyleSheet.create({
     padding: 10,
     alignItems: 'center',
   },
+  header: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: '100%',
+    paddingVertical: 14,
+    alignItems: 'center',
+    borderRadius: 5,
+  },
+  headerText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginLeft: 10,
+  },
   input: {
     height: 40,
     flex: 1,
@@ -160,7 +210,7 @@ const styles = StyleSheet.create({
   },
   sendButton: {
     padding: 10,
-    backgroundColor: '#6998AB',
+    backgroundColor: '#B1D0E0',
     borderRadius: 5,
   },
   sendButtonText: {

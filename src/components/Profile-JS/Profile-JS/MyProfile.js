@@ -10,6 +10,7 @@ const ProfileScreen = () => {
   const toggleNotifications = () => setNotificationsEnabled(previousState => !previousState);
   const handleLogout = () => {
     // Logic for handling user logout goes here
+    
   };
 
   return (
@@ -36,7 +37,7 @@ const ProfileScreen = () => {
       </View>
 
       <TouchableOpacity style={styles.logoutContainer} onPress={handleLogout}>
-        <MaterialIcons name="logout" size={24} color="#555" />
+        <MaterialIcons name="logout" size={24} color="#FF8488" />
         <Text style={styles.logoutText}>Log Out</Text>
       </TouchableOpacity>
 
@@ -51,8 +52,8 @@ const SettingOption = ({ icon, title, isSwitch, switchValue, onToggle }) => (
     <Text style={styles.settingOptionText}>{title}</Text>
     {isSwitch && (
       <Switch
-        trackColor={{ false: "#767577", true: "#81b0ff" }}
-        thumbColor={switchValue ? "#f5dd4b" : "#f4f3f4"}
+        trackColor={{ false: "#767577", true: "#B1D0E0" }}
+        thumbColor={switchValue ? "#1A374D" : "#f4f3f4"}
         onValueChange={onToggle}
         value={switchValue}
         style={styles.switch}
@@ -109,7 +110,7 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   switch: {
-    transform: [{ scaleX: .8 }, { scaleY: .8 }],
+    transform: [{ scaleX: .9  }, { scaleY: .8 }],
   },
   versionText: {
     textAlign: 'center',
@@ -126,9 +127,11 @@ const styles = StyleSheet.create({
   },
   logoutText: {
     fontSize: 18,
-    color: '#333',
+    color: '#FF8488',
     marginLeft: 10,
   },
 });
 
 export default ProfileScreen;
+
+

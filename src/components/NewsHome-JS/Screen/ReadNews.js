@@ -55,13 +55,17 @@ function ReadNews() {
 
         <View style={{display: 'flex', flexDirection: 'row', justifyContent:'space-between'}}>
           {/* <Text style={{marginTop:10,color:Color.primary}}>{news.source.name}</Text> */}
-          <Text style={{ marginTop: 10, color: Color.primary }}>{formatDate(news.publishedAt)}</Text>
+          <Text style={{ marginTop: 10, color: "#6998AB" }}>{formatDate(news.publishedAt)}</Text>
         </View>
 
         <Text style={{marginTop:10,fontSize:16, color:Color.gray, lineHeight:30}}>{news.description}</Text>
         <Text style={{marginTop:10,fontSize:16, color:Color.gray, lineHeight:30, marginBottom:20}}>{formatNewsContent(news.content)}</Text>
-        <Button style={{marginBottom: 50, color: Color.primary, fontSize:16, fontWeight:'bold' }} 
-                        title="Read More"  onPress={() => WebBrowser.openBrowserAsync(news.url)}></Button>
+        <TouchableOpacity 
+            style={{backgroundColor:'#B1D0E0', padding: 8, alignItems: 'center', borderRadius: 15}}
+            onPress={() => WebBrowser.openBrowserAsync(news.url)}
+        >
+            <Text style={{color: 'white', fontSize: 16, fontWeight: 'bold'}}>Read More</Text>
+        </TouchableOpacity>
 
       </View>
     </ScrollView>

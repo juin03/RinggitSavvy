@@ -32,7 +32,7 @@ const SignInWithOAuth = () => {
 
   return (
     <LinearGradient
-      colors={['#99ccff', '#6699ff', '#3366ff']}
+      colors={['#B1D0E0', '#6998AB', '#406882', '#1A374D']}
       style={styles.container}
     >
       <Image source={RinggitSavvy} style={styles.logo} />
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   },
   signInButton: {
     flexDirection: 'row',
-    backgroundColor: "#4285F4",
+    backgroundColor: "#6998AB",
     paddingVertical: 12,
     paddingHorizontal: 30,
     borderRadius: 20,

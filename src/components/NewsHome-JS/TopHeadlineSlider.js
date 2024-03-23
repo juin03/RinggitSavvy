@@ -23,7 +23,7 @@ function TopHeadlineSlider({ newsList }) {
               <Image source={{ uri: item.urlToImage }} 
                 style={{ height: Dimensions.get('screen').width * 0.75, borderRadius: 10 }}/>
               <Text numberOfLines={2} style={{ marginTop: 10, fontSize: 20, fontWeight: '900' }}>{item.title}</Text>
-              <Text style={{ marginTop: 5, color: Color.primary, textAlign: 'right', paddingRight: 15 }}>~{item?.source?.name}</Text>
+              <Text style={{ marginTop: 5, color: "#6998AB", textAlign: 'right', paddingRight: 15 }}>~{item?.source?.name}</Text>
           </TouchableOpacity>
         )}
       />

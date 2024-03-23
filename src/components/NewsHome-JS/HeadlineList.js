@@ -32,7 +32,7 @@ function HeadlineList({ newsList }) {
 
               <View style={{ width: 215, marginLeft: 10 }}>
                 <Text numberOfLines={4} style={{ fontSize: 18, fontWeight: '800' }}>{item.title}</Text>
-                <Text style={{ color: Color.primary, textAlign: 'right', marginTop: 18, marginRight: 10 }}>~{item?.source?.name}</Text>
+                <Text style={{ color: "#6998AB", textAlign: 'right', marginTop: 18, marginRight: 10 }}>~{item?.source?.name}</Text>
               </View>
 
             </TouchableOpacity>

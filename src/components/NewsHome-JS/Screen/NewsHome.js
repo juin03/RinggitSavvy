@@ -33,8 +33,8 @@ function NewsHome() {
       <View style={{display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
         <Text style={styles.appName}>Today's news</Text>
         <View style={{display:'flex', flexDirection:'row', marginTop: 14}}>
-          <Ionicons name="notifications-outline" size={28} color="#DDE7FF" style={{ marginRight: 20 }} />
-          <Ionicons name="search-outline" size={28} color="#DDE7FF" />
+          <Ionicons name="notifications-outline" size={28} color="#1A374D" style={{ marginRight: 20 }} />
+          <Ionicons name="search-outline" size={28} color="#1A374D" />
         </View>
       </View>
 
