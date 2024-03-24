@@ -41,9 +41,8 @@ Before you start, ensure you have the following prerequisites installed:
 
 3. Clone the repository using the following command:
    ```
-   git clone https://github.com/your-username/RinggitSavy.git
+   git clone https://github.com/juin03/RinggitSavy.git
    ```
-   Replace `your-username` with your GitHub username and `your-react-native-app` with the name of your repository.
 
 ### Setting Up MySQL Database
 1. Open your MySQL client (e.g., MySQL Workbench).
@@ -55,8 +54,8 @@ Before you start, ensure you have the following prerequisites installed:
    Replace `your_database_name` with the desired name for your database.
 
 3. Execute the SQL scripts located in `src/components/Quiz-JS/Services/`:
-   - **Table Creation**: Open `TableCreation.sql` and execute the script to create the necessary tables.
-   - **Data Insertion**: Open `DataInsertion.sql` and execute the script to insert initial data into the tables.
+   - **Table Creation**: Import `TableCreation.sql` and execute the script to create the necessary tables.
+   - **Data Insertion**: Import `DataInsertion.sql` and execute the script to insert initial data into the tables.
 
 4. Modify database connection details:
    - Open `connectDB.js` located in `src/components/Quiz-JS/Services/`.
@@ -90,6 +89,10 @@ Before you start, ensure you have the following prerequisites installed:
 - Ensure your MySQL server is running before starting the app for the fully functional app
 - Make sure to update the database connection details in `connectDB.js` to match your MySQL configuration.
 - But again, it is totally fine to ignore the set up of MySQL as the app will still function perfectly without this feature
+- To connect the MySQL server, you have to create a new terminal and execute:
+  ```
+  node connectDB.js
+  ```
 
 ---
 
