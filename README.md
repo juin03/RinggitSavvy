@@ -44,9 +44,8 @@ Before you start, ensure you have the following prerequisites installed:
    ```
    npm install -g expo-cli
    ```
-
-
-3. **MySQL Database**: You need to have MySQL installed on your machine. If you haven't installed MySQL yet, refer to the [MySQL installation guide](https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/).
+Only the Risk Tolerance Assessment feature requires MySQL set. Feel free to skip MySQL setup; the app will function perfectly without this feature.
+3. **MySQL Database (Optional)**: You need to have MySQL installed on your machine. If you haven't installed MySQL yet, refer to the [MySQL installation guide](https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/).
 
 ### Cloning the Repository
 1. Open your terminal.
@@ -55,7 +54,7 @@ Before you start, ensure you have the following prerequisites installed:
 
 3. Clone the repository using the following command:
    ```
-   git clone https://github.com/your-username/your-react-native-app.git
+   git clone https://github.com/your-username/RinggitSavy.git
    ```
    Replace `your-username` with your GitHub username and `your-react-native-app` with the name of your repository.
 
