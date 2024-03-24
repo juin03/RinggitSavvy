@@ -17,21 +17,6 @@ With a range of features including bite-sized learning modules, risk management 
 - **Mentorship Opportunities**: Connect with industry experts for one-on-one guidance and support tailored to your financial goals and aspirations.
 -  **Finance Podcasts**: Listen to podcasts featuring expert discussions, interviews, and insights on various finance-related topics to expand your knowledge and stay informed.
 
-## Contact Us
-Kindly contact Team MoneyMoneyCome for more details:
-
-| Full Name | Email Address  |
-|:-:|:-:|
-| Lim Ting Juin | lim.tingjuin5789@gmail.com|
-| Leon Then Leong Onn | leonthen0218@gmail.com |
-| Anson Kiu Yi Kai | ansonkiu0212@gmail.com|
-
-
-> **Note:** This application is made for V HACK 2024 - Preliminary Round Submission, targeting Case Study 2: Enhancing Financial Literacy on Capital Market.
-
-Certainly! Here's a detailed guide for setting up your React Native app:
-
----
 
 ## Setup Guide for [Ringgit Savvy]
 
@@ -44,8 +29,10 @@ Before you start, ensure you have the following prerequisites installed:
    ```
    npm install -g expo-cli
    ```
-Only the Risk Tolerance Assessment feature requires MySQL set. Feel free to skip MySQL setup; the app will function perfectly without this feature.
-3. **MySQL Database (Optional)**: You need to have MySQL installed on your machine. If you haven't installed MySQL yet, refer to the [MySQL installation guide](https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/).
+3. **MySQL Database (Optional)**: 
+   - Only the Risk Tolerance Assessment feature requires MySQL setup. Feel free to skip MySQL setup; the app will function perfectly without this feature.
+   - You need to have MySQL installed on your machine. If you haven't installed MySQL yet, refer to the [MySQL installation guide](https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/).
+
 
 ### Cloning the Repository
 1. Open your terminal.
@@ -105,4 +92,16 @@ Only the Risk Tolerance Assessment feature requires MySQL set. Feel free to skip
 
 ---
 
-This guide should help users set up and run your React Native app smoothly. Feel free to customize it further based on your specific requirements or additional setup steps. Let me know if you need further assistance!
+This guide should help you set up and run your Ringgit Savvy app smoothly.
+
+## Contact Us
+Kindly contact Team MoneyMoneyCome for more details:
+
+| Full Name | Email Address  |
+|:-:|:-:|
+| Lim Ting Juin | lim.tingjuin5789@gmail.com|
+| Leon Then Leong Onn | leonthen0218@gmail.com |
+| Anson Kiu Yi Kai | ansonkiu0212@gmail.com|
+
+
+> **Note:** This application is made for V HACK 2024 - Preliminary Round Submission, targeting Case Study 2: Enhancing Financial Literacy on Capital Market.
