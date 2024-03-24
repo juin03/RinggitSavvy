@@ -6,9 +6,9 @@ app.use(express.json());
 
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'root',
-  password: 'ohayou',
-  database: 'quizdb'
+  user: 'your_mysql_username',
+  password: 'your_mysql_password',
+  database: 'your_database_name'
 });
 
 app.get('/option', (req, res) => {
