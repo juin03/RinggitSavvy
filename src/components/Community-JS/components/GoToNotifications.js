@@ -30,7 +30,7 @@ export default function GoToNotifications({ navigation }) {
           color={Colors.WHITE}
           style={{ marginRight: 10 }}
         />
-        <Text style={{ color: Colors.WHITE, fontSize: 16, fontWeight: 'bold' }}>
+        <Text style={{ color: Colors.WHITE, fontSize: 16,  fontFamily: "Inter-Bold", }}>
           Go To Notifications
         </Text>
       </TouchableOpacity>

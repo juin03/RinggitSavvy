@@ -4,6 +4,7 @@ import Button from '../Components/Button';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { ScrollView, GestureHandlerRootView } from 'react-native-gesture-handler';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
+import CourseList from '../../bitesizedlearning-JS/Components/HomeScreen/CourseList';
 
 const QuizResult = ({ route }) => {
   const userRiskClass = route?.params?.userRiskClass || 'Null';
@@ -30,6 +31,10 @@ const QuizResult = ({ route }) => {
 
   const navigation = useNavigation();
 
+  const backHome = () => {
+    navigation.navigate('Home');
+  };
+
 
   return (
     <GestureHandlerRootView  style= {styles.container_outer}>
@@ -43,7 +48,7 @@ const QuizResult = ({ route }) => {
           <Text style = {{color:'#FFFFFF', fontSize: 22, marginTop: 10, marginBottom: 10 }}>Risk Tolerance</Text>
         </View>
 
-      <View style={{marginTop:10}}>
+      <View style={{marginTop:10, marginLeft: 20}}>
         <AnimatedCircularProgress
             size={110}
             width={15}
@@ -63,21 +68,20 @@ const QuizResult = ({ route }) => {
       </View>
 
       </View>
-      <View style={styles.container_inner}>
-        <View style = {styles.descriptionContainer}>
+
+      <View style ={styles.container_inner}>
+        <ScrollView style = {styles.descriptionContainer}>
           <Text style ={styles.descriptionText}>
             {riskClassDescriptions[userRiskClass] || 'Default description'}
           </Text>
-          </View>
-        <View style = {styles.linkingContainer}>  
-        <ScrollView>
-          <Text>
-            Link to other pages
-          </Text>
         </ScrollView>
-        </View>
-        <Button title="Done"></Button>
-      </View>  
+          <ScrollView horizontal ={true}  style = {styles.linkingContainer} showsHorizontalScrollIndicator={false}>
+            <CourseList level="Basic"/>
+        </ScrollView>
+          <Button title="Done" onPress={backHome} style ={{alignSelf:'center'}}></Button>
+
+      </View>
+
     </GestureHandlerRootView>
 );
 }
@@ -86,25 +90,21 @@ const styles = StyleSheet.create({
   container_outer: {
     backgroundColor: '#406882',
     flex: 1, 
-    justifyContent: 'flex-end',
   },
 
   container_inner: {
     backgroundColor: '#FFFFFF',
-    flex: 0.8,
+    flex: 1,
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
-    marginTop: 60,
+    marginTop: 20,
     alignItems: 'center',
-    justifyContent: 'top',
+    justifyContent: 'flex-start',
   },
 
   titleContainer: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    height: 80,
+    height: 70,
+    marginBottom: 20,
     justifyContent: 'center',
     alignItems: 'center',
     // backgroundColor: '#000000',
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
 
   titleText: {
     fontSize: 26,
-    fontWeight: 'bold',
+    fontFamily: "Inter-Bold",
     color: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center',
@@ -122,49 +122,53 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     // backgroundColor: '#998112',
+    flexDirection: 'row',
   },
 
   conservativeType: {
     color: '#C0FF71', 
     fontSize: 36,
-    fontWeight: 'bold',
+    fontFamily: "Inter-SemiBold",
   },
 
   moderateType: {
     color: '#FFF6A0', 
     fontSize: 36,
-    fontWeight: 'bold',
+    fontFamily: "Inter-SemiBold",
   },
 
   aggressiveType: {
     color: '#FF8B8B', 
     fontSize: 36,
-    fontWeight: 'bold',
+    fontFamily: "Inter-SemiBold",
   },
 
   defaultType: {
     color: '#FFFFFF', 
     fontSize: 36,
-    fontWeight: 'bold',
+    fontFamily: "Inter-SemiBold",
   },
 
   descriptionContainer: {
     // backgroundColor: '#387122',
-    marginTop: 20,
-    flex: 0.6,
+    marginTop: 10,
     width: 300,
+    height:'auto',
   },
 
   descriptionText: {
     color: '#000000',
     fontSize: 18,
+    fontFamily: "Inter-Regular",
   },
 
   linkingContainer: {
-    // backgroundColor: '#384442',
-    marginTop: 10,
-    flex: 0.3,
+    // backgroundColor: '#384442', 
+    alignSelf: 'center',
     width: '100%',
+    height: 230,
+    height: 'auto',
+    marginLeft: 20,
   },
   });
 

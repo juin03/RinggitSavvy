@@ -10,13 +10,13 @@ export default function Post() {
   const {user,isLoading} = useUser()
 
   const list = [
-    { title: 'Add a photo', icon: 'photo' },
+    { title: 'Add a photo', icon: 'photo'}, 
     { title: 'Take a video', icon: 'video-camera' },
-    { title: 'Celebrate an occasion', icon: 'sun-o' },
+    { title: ' Celebrate an occasion', icon: 'sun-o' },
     { title: 'Add a document', icon: 'newspaper-o' },
     { title: "Share that you're hiring", icon: 'briefcase' },
-    { title: 'Find an expert', icon: 'angellist' },
-    { title: 'Create apoll', icon: 'bar-chart' },
+    { title: '  Find an expert', icon: 'angellist' },
+    { title: 'Create a poll', icon: 'bar-chart' },
     { title: 'Create an event', icon: 'calendar' },
   ];
 
@@ -33,7 +33,7 @@ export default function Post() {
         color={Colors.GRAY}
         style={{ marginHorizontal: 20 }}
       />
-      <Text style={{ color: Colors.GRAY, fontWeight: 'bold', fontSize: 16 }}>
+      <Text style={{ color: Colors.GRAY,fontFamily: "Inter-Bold", fontSize: 16 }}>
         {item.title}
       </Text>
     </TouchableOpacity>

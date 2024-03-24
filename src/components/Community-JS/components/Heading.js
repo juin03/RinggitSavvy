@@ -4,6 +4,6 @@ Colors
 
 export default function Heading({ title }) {
   return (
-    <Text style={{ fontSize: 19, color: Colors.BLACK, fontWeight: "bold" }}>{title}</Text>
+    <Text style={{ fontSize: 19, color: Colors.BLACK, fontFamily: "Inter-Bold", }}>{title}</Text>
   )
 }

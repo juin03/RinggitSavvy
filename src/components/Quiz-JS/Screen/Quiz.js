@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
 
   questionFont: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontFamily: 'Inter-Bold',
     color: '#000000', 
     width: 320,
   },
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
 
   titleText: {
     fontSize: 26,
-    fontWeight: 'bold',
+    fontFamily: 'Inter-Bold',
     color: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center',
@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
   
   questionNumber : {
     fontSize: 15,
-    fontWeight: 'bold',
+    fontFamily: 'Inter-Bold',
     color: '#000000',
   }
 });

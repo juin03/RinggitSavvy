@@ -7,7 +7,6 @@ import ProgressBar from 'react-native-progress/Bar';
 import { useNavigation } from '@react-navigation/native';
 
 const PodcastPlaying = () => {
-  // const navigation = useNavigation();
 
   return (
     <View style= {styles.container} >
@@ -25,8 +24,8 @@ const PodcastPlaying = () => {
       </View>
 
       <View style = {styles.TitleContainer}> 
-        <Text style ={styles.Title}>Inside Market</Text>
-        <Text style = {styles.Author}>Jackson Square Capital</Text>
+        <Text style ={styles.Title}>Odeon Capital Conversation</Text>
+        <Text style = {styles.Author}>Odeon Conversations</Text>
       </View>
       <View style ={styles.progressBarContainer}>
         <ProgressBar progress={0.3} width={300} color={'#6B8A9E'} height={1} />

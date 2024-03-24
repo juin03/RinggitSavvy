@@ -11,7 +11,7 @@ const ShowNetworks = ({ item }) => {
     <View style={{ borderRadius: 10, borderColor: Colors.GRAY, borderWidth: 1, margin: 5, width: width, alignItems: "center" }}>
       <Image source={item.banner} style={{ height: 70, width: "100%", borderTopLeftRadius: 10, borderTopRightRadius: 10 }} />
       <Image source={item.profile_picture} style={{ height: 80, width: 80, borderRadius: 100, marginTop: -50 }} />
-      <Text style={{ fontSize: 19, color: Colors.BLACK, fontWeight: "bold", marginTop: 5, paddingHorizontal: 7, textAlign: "center" }}>{item.name}</Text>
+      <Text style={{ fontSize: 19, color: Colors.BLACK, fontFamily: "Inter-Bold", marginTop: 5, paddingHorizontal: 7, textAlign: "center" }}>{item.name}</Text>
       <Text style={{ fontSize: 15, textAlign: "center", paddingHorizontal: 7, height: 35, marginBottom: 10 }}>{item.title}</Text>
 
       {
@@ -29,7 +29,7 @@ const ShowNetworks = ({ item }) => {
       <TouchableOpacity onPress={() => { }} style={{
         borderRadius: 100, borderWidth: 1, borderColor: Colors.BLUE, paddingHorizontal: 30, paddingVertical: 2, marginVertical: 10
       }}>
-        <Text style={{ fontSize: 19, color: Colors.BLUE, fontWeight: "bold" }}>Connect</Text>
+        <Text style={{ fontSize: 19, color: Colors.BLUE, fontFamily: "Inter-Bold", }}>Connect</Text>
       </TouchableOpacity>
     </View>
   )

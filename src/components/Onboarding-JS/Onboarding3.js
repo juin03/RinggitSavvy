@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     color: 'white',
-    fontWeight: 'bold',
+    fontFamily: 'Inter-Bold',
   },
 });
 

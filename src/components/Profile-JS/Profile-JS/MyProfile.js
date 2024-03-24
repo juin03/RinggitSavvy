@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   },
   fullName: {
     fontSize: 22,
-    fontWeight: 'bold',
+    fontFamily: 'Inter-Bold',
     color: '#333',
   },
   email: {

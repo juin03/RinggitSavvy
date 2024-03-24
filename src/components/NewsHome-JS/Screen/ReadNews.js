@@ -61,7 +61,7 @@ function ReadNews() {
         <Text style={{marginTop:10,fontSize:16, color:Color.gray, lineHeight:30}}>{news.description}</Text>
         <Text style={{marginTop:10,fontSize:16, color:Color.gray, lineHeight:30, marginBottom:20}}>{formatNewsContent(news.content)}</Text>
         <TouchableOpacity 
-            style={{backgroundColor:'#B1D0E0', padding: 8, alignItems: 'center', borderRadius: 15}}
+            style={{backgroundColor:'#6998AB', padding: 8, alignItems: 'center', borderRadius: 15}}
             onPress={() => WebBrowser.openBrowserAsync(news.url)}
         >
             <Text style={{color: 'white', fontSize: 16, fontWeight: 'bold'}}>Read More</Text>

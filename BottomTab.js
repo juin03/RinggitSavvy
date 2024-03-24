@@ -24,11 +24,11 @@ export default function HomeScreen({ navigation }) {
           iconName = focused ? 'home' : 'home-outline';
         } else if (route.name === 'News') {
           iconName = focused ? 'newspaper' : 'newspaper-outline';
-        } else if (route.name === 'ChatBot') {
+        } else if (route.name === 'Chatbot') {
           iconName = focused ? 'chatbubbles' : 'chatbubbles-outline';
         } else if (route.name === 'Learning') {
           iconName = focused ? 'book' : 'book-outline';
-        } else if (route.name === 'ProfileScreen') {
+        } else if (route.name === 'Profile') {
           iconName = focused ? 'person' : 'person-outline';
         }
 
@@ -43,9 +43,9 @@ export default function HomeScreen({ navigation }) {
   >
     <Tab.Screen name="Home" component={Community} options={{ headerShown: false }}/>
     <Tab.Screen name="News" component={NewsHomeNavigator} options={{ headerShown: false }}/>
-    <Tab.Screen name="ChatBot" component={ChatbotNavigation} options={{ headerShown: false }}/>
+    <Tab.Screen name="Chatbot" component={ChatbotNavigation} options={{ headerShown: false }}/>
     <Tab.Screen name="Learning" component={LearningNavigationHome} options={{ headerShown: false }}/>      
-    <Tab.Screen name="ProfileScreen" component={ProfileScreen} options={{ headerShown: false }}/>
+    <Tab.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }}/>
   </Tab.Navigator>
 );
 }

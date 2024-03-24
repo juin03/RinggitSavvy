@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   text2: {
     fontSize: 30,
-    fontWeight: 'bold',
+    fontFamily: 'Inter-Bold',
     color: '#739072',
     paddingBottom: 46,
   },
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     color: 'white',
-    fontWeight: 'bold',
+    fontFamily: 'Inter-Bold',
     
   },
 });

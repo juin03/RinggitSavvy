@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
         textAlign: 'left',
         color: '#4D4D4D',
         fontSize: 18,
+        fontFamily: 'Inter-Normal',
       },
   });
   

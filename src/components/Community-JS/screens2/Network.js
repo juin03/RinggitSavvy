@@ -8,13 +8,13 @@ export default function Network() {
   return (
     <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
       <TouchableOpacity onPress={() => { }} style={{ flexDirection: "row", alignItems: "center", paddingHorizontal: 16, paddingVertical: 10, backgroundColor: Colors.WHITE, justifyContent: "space-between" }}>
-        <Text style={{ fontSize: 19, fontWeight: "bold", color: Colors.BLACK }}>Manage my Network</Text>
+        <Text style={{ fontSize: 19,fontFamily: "Inter-Bold", color: Colors.BLACK }}>Manage my Network</Text>
       </TouchableOpacity>
 
       <GoToNotifications />
 
       <View style={{ flex: 1, backgroundColor: Colors.WHITE, padding: 10, marginTop: 10 }}>
-        <Text style={{ fontWeight: "bold", color: Colors.BLACK, fontSize: 19, marginVertical: 10, marginHorizontal: 6 }}>People you may know</Text>
+        <Text style={{fontFamily: "Inter-Bold", color: Colors.BLACK, fontSize: 19, marginVertical: 10, marginHorizontal: 6 }}>People you may know</Text>
 
         <FlatList contentContainerStyle={{ flexDirection: "row", alignItems: "center", flexWrap: "wrap" }} data={Networks} showsVerticalScrollIndicator={false} renderItem={({ item }) => <ShowNetworks item={item} />} />
       </View>

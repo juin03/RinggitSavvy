@@ -17,7 +17,6 @@ export default function LearningNavigationHome({ navigation }) {
       <Text
         style={{
           fontSize: 26,
-          fontWeight: "bold",
           marginBottom: 20,
           fontFamily: "Inter-Bold",
           color: "#fdfdfd",
@@ -193,7 +192,7 @@ export default function LearningNavigationHome({ navigation }) {
             // marginLeft: 10,
           }}
         >
-          Risk Assessment Test
+          Risk Tolerance Assessment
         </Text>
         {/* // </View> */}
       </TouchableOpacity>

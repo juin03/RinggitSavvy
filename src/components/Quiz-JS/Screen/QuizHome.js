@@ -31,14 +31,15 @@ const styles = StyleSheet.create({
 
   title: {
     fontSize: 26,
-    fontWeight: 'bold',
+    fontFamily: 'Inter-Bold',
+    // fontFamily: "outfit",
     color: '#406882',
     marginTop: 160,
   },
 
   subtitle: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontFamily: 'Inter-Bold',
     color: '#1A374D',
     marginTop: 10,
   },

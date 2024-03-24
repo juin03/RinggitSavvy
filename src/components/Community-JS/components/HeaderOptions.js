@@ -53,7 +53,7 @@ const HeaderOptions = ({ iconLeft, navigation, isPostScreen }) => {
           <MenuOptions optionsContainerStyle={styles.menuOptionsStyle}>
             <MenuOption onSelect={() => navigation.navigate(Screens.NETWORK)} text='Network' />
             <MenuOption onSelect={() => navigation.navigate(Screens.NOTIFICATION)} text='Notification' />
-            <MenuOption onSelect={() => navigation.navigate(Screens.POST)} text='Post' />
+            <MenuOption onSelect={() => navigation.navigate(Screens.POST)} text='Create Post' />
           </MenuOptions>
         </Menu>
       </View>
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     fontSize: 19,
     color: Colors.BLACK,
-    fontWeight: 'bold',
+    fontFamily: "Inter-Bold",
     flex: 1,
     textAlign: 'center',
   },
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
   postText: {
     color: Colors.GRAY,
     fontSize: 16,
-    fontWeight: 'bold',
+    fontFamily: "Inter-Bold",
   },
   reorderIcon: {
     marginRight: 13,

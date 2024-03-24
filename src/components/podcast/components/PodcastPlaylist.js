@@ -1,10 +1,17 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const PodcastPlaylist = ({ imageSource, podcastName, podcastDescription, isSmallText }) => {
+  const navigation = useNavigation();
+
+  const onPressButton = () => {
+    navigation.navigate('PodcastPlay');
+  }
+
     return (
       <View horizontal={true}>
-        <TouchableOpacity style={styles.Playlist}>
+        <TouchableOpacity style={styles.Playlist} onPress={onPressButton}>
           <Image style={styles.PlaylistImage} source={imageSource} />
           <View style={styles.textContainer}>
           <Text style={{...styles.PlaylistPodcastName, fontSize: isSmallText ? 16 : styles.PlaylistPodcastName.fontSize}}>{podcastName}</Text>

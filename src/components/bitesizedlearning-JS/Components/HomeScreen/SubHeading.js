@@ -11,7 +11,7 @@ export default function SubHeading({ text, color = Colors.PRIMARY }) {
           fontSize: 20,
           color: color,
           marginBottom: 5,
-          marginTop: 40,
+          marginTop: 30,
         }}
       >
         {text}

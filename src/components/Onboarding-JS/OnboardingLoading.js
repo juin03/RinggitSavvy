@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 30,
-    fontWeight: 'bold',
+    fontFamily: 'Inter-Bold',
     color: 'white',
     padding: 10,
   },

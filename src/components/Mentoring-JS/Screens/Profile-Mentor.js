@@ -20,7 +20,7 @@ export default function Profile() {
       <CustomIcon name={icon} size={28} color={Colors.GRAY} style={{ marginRight: 10 }} />
       <View>
         <TouchableOpacity onPress={() => { }}>
-          <Text style={{ fontSize: 18, fontWeight: "bold", color: Colors.BLACK }}>{title}</Text>
+          <Text style={{ fontSize: 18, fontFamily: "Inter-SemiBold", color: Colors.BLACK }}>{title}</Text>
         </TouchableOpacity>
         <Text style={{ color: Colors.LIGHT_BLACK }}>{subTitle}</Text>
       </View>
@@ -34,14 +34,14 @@ export default function Profile() {
         <Image source={MentorPicture}  style={{ borderRadius: 100, height: 100, width: 100, borderColor: Colors.WHITE, borderWidth: 3, bottom: 50, left: 15 }} />
 
         <View style={{ marginTop: -45, paddingHorizontal: 10 }}>
-          <Text style={{ fontSize: 28, fontWeight: "bold", color: Colors.BLACK, width:360 }}>Charles Lim</Text>
+          <Text style={{ fontSize: 28, fontFamily: "Inter-SemiBold", color: Colors.BLACK, width:360 }}>Charles Lim</Text>
           <Text style={{ fontSize: 16, color: Colors.BLACK }}>{DATA.INFO.bio}</Text>
           <Text style={{ marginTop: 4, marginBottom: 10, color: Colors.GRAY }}>Talks about - {DATA.INFO.talksAbout.map(item => `${item} `)}</Text>
 
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Text style={{ color: Colors.BLUE, fontSize: 16, fontWeight: "bold" }}>{DATA.INFO.followers} followers</Text>
+            <Text style={{ color: Colors.BLUE, fontSize: 16, fontFamily: "Inter-SemiBold" }}>{DATA.INFO.followers} followers</Text>
             <Icon name='dot-single' size={16} color={Colors.GRAY} />
-            <Text style={{ color: Colors.BLUE, fontSize: 16, fontWeight: "bold" }}>{DATA.INFO.connections > 500 ? "500+" : DATA.INFO.connections} connections</Text>
+            <Text style={{ color: Colors.BLUE, fontSize: 16, fontFamily: "Inter-SemiBold" }}>{DATA.INFO.connections > 500 ? "500+" : DATA.INFO.connections} connections</Text>
           </View>
         </View>
 
