@@ -25,7 +25,7 @@ Before you start, ensure you have the following prerequisites installed:
 
 1. **Node.js and npm**: Install Node.js and npm from [Node.js website](https://nodejs.org/).
 
-2. **Expo CLI (optional)**: If you prefer using Expo, you can install Expo CLI globally:
+2. **Expo CLI **: You can install Expo CLI globally:
    ```
    npm install -g expo-cli
    ```
@@ -46,7 +46,7 @@ Before you start, ensure you have the following prerequisites installed:
    Replace `your-username` with your GitHub username and `your-react-native-app` with the name of your repository.
 
 ### Setting Up MySQL Database
-1. Open your MySQL client (e.g., MySQL Workbench, HeidiSQL).
+1. Open your MySQL client (e.g., MySQL Workbench).
 
 2. Create a new schema:
    ```sql
@@ -87,8 +87,9 @@ Before you start, ensure you have the following prerequisites installed:
    ```
 
 ### Note
-- Ensure your MySQL server is running before starting the app.
+- Ensure your MySQL server is running before starting the app for the fully functional app
 - Make sure to update the database connection details in `connectDB.js` to match your MySQL configuration.
+- But again, it is totally fine to ignore the set up of MySQL as the app will still function perfectly without this feature
 
 ---
 
