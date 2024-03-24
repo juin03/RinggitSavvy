@@ -25,7 +25,7 @@ Before you start, ensure you have the following prerequisites installed:
 
 1. **Node.js and npm**: Install Node.js and npm from [Node.js website](https://nodejs.org/).
 
-2. **Expo CLI **: You can install Expo CLI globally:
+2. **Expo CLI**: You can install Expo CLI globally:
    ```
    npm install -g expo-cli
    ```
