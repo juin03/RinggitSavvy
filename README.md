@@ -18,7 +18,7 @@ With a range of features including bite-sized learning modules, risk management 
 -  **Finance Podcasts**: Listen to podcasts featuring expert discussions, interviews, and insights on various finance-related topics to expand your knowledge and stay informed.
 
 
-## Setup Guide for [Ringgit Savvy]
+## Setup Guide for [RinggitSavvy]
 
 ### Prerequisites
 Before you start, ensure you have the following prerequisites installed:
@@ -93,7 +93,7 @@ Before you start, ensure you have the following prerequisites installed:
 
 ---
 
-This guide should help you set up and run your Ringgit Savvy app smoothly.
+This guide should help you set up and run your RinggitSavvy app smoothly.
 
 ## Contact Us
 Kindly contact Team MoneyMoneyCome for more details:
