@@ -36,7 +36,7 @@ export default function Categories() {
         showsHorizontalScrollIndicator={false}
         // numColumns={4}
         renderItem={({ item, index }) =>
-          index <= 4 && (
+          index <= 5 && (
             <TouchableOpacity
               style={{ ...styles.container, marginRight: 29 }}
               onPress={() =>
